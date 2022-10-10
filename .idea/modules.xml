@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cash_flow/cash_flow.iml" filepath="$PROJECT_DIR$/cash_flow/cash_flow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cash_flow/android/cash_flow_android.iml" filepath="$PROJECT_DIR$/cash_flow/android/cash_flow_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cash_flow/android/app/src/debug/debug.iml" filepath="$PROJECT_DIR$/cash_flow/android/app/src/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cash_flow/android/app/src/profile/profile.iml" filepath="$PROJECT_DIR$/cash_flow/android/app/src/profile/profile.iml" />
+    </modules>
+  </component>
+</project>
