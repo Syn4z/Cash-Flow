@@ -1,14 +1,13 @@
-version: "3"
-
 services:
-  postgres:
-    image: postgres:latest
-    container_name: postgres
+  database:
+    image: postgres
     ports:
-      - "5432:5432"
+      - 5001:5432
     volumes:
-      - postgres:/data/postgres
+      - pgdata:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: cash_flow     
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=prisma
+volumes:
+  pgdata:
