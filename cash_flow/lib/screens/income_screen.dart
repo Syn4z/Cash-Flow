@@ -1,10 +1,12 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:test1/shared/menu_drawer.dart';
 
-class GoalsScreen extends StatelessWidget {
-  const GoalsScreen({super.key});
+class IncomeScreen extends StatelessWidget {
+  const IncomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

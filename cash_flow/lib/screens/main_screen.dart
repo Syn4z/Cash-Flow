@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import '../shared/menu_drawer.dart';
 import '../shared/menu_bottom.dart';
@@ -10,7 +12,11 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Pocketfull')),
+      appBar: AppBar(
+        elevation: 15,
+        shadowColor: Color.fromARGB(255, 99, 142, 53),
+        title: Container(
+        child: Text('Pocketfull'),),),
       drawer: MenuDrawer(),
       bottomNavigationBar: MenuBottom(),
       body: Container(
