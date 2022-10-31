@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:test1/screens/expenses_screen.dart';
 import 'package:test1/screens/main_screen.dart';
+
 
 void main() {
   runApp(Pocketful());
@@ -13,8 +15,12 @@ class Pocketful extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MainScreen(),
-      theme: ThemeData(appBarTheme: AppBarTheme(color: Colors.green)),
+      routes: {
+        '/':(context) => MainScreen(),
+        '/add':(context) => ExpensesScreen(),
+      },
+      initialRoute: '/',
+      theme: ThemeData(appBarTheme: AppBarTheme(color: Color.fromARGB(255, 59, 125, 62))),
     );
   }
 }

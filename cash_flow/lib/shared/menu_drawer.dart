@@ -5,8 +5,7 @@ import '../screens/main_screen.dart';
 import '../screens/debts_screen.dart';
 import '../screens/expenses_screen.dart';
 import '../screens/goals_screen.dart';
-import '../screens/plans_screen.dart';
-import '../screens/track_screen.dart';
+import '../screens/income_screen.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({super.key});
@@ -23,15 +22,14 @@ class MenuDrawer extends StatelessWidget {
   List<Widget> buildMenuItems(BuildContext context) {
     final List<String> menuTitles = [
       'Home',
-      'Track Investments',
+      'Income',
       'Expenses',
-      'Debts',
       'Goals',
-      'Plans'
+      'Debts',
     ];
     List<Widget> menuItems = [];
     menuItems.add(DrawerHeader(
-        decoration: BoxDecoration(color: Colors.green),
+        decoration: BoxDecoration(color: Color.fromARGB(255, 59, 125, 62)),
         child: Text('Pocketful',
             style: TextStyle(color: Colors.white, fontSize: 28))));
     menuTitles.forEach((String element) {
@@ -43,8 +41,8 @@ class MenuDrawer extends StatelessWidget {
               case 'Home':
                 screen = MainScreen();
                 break;
-              case 'Track Investments':
-                screen = TrackInvScreen();
+              case 'Income':
+                screen = IncomeScreen();
                 break;
               case 'Expenses':
                 screen = ExpensesScreen();
@@ -54,9 +52,6 @@ class MenuDrawer extends StatelessWidget {
                 break;
               case 'Goals':
                 screen = GoalsScreen();
-                break;
-              case 'Plans':
-                screen = PlansScreen();
                 break;
             }
             Navigator.of(context).pop();
