@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import '../shared/menu_drawer.dart';
+import '../shared/menu_bottom.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -11,6 +12,7 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Pocketfull')),
       drawer: MenuDrawer(),
+      bottomNavigationBar: MenuBottom(),
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
@@ -40,3 +42,5 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
+
+

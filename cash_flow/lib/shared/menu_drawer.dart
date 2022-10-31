@@ -31,7 +31,7 @@ class MenuDrawer extends StatelessWidget {
     ];
     List<Widget> menuItems = [];
     menuItems.add(DrawerHeader(
-        decoration: BoxDecoration(color: Colors.green),
+        decoration: BoxDecoration(color: Color.fromARGB(255, 59, 125, 62)),
         child: Text('Pocketful',
             style: TextStyle(color: Colors.white, fontSize: 28))));
     menuTitles.forEach((String element) {
