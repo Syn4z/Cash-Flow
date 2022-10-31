@@ -12,7 +12,15 @@ class ExpensesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Expenses')),
+      appBar: AppBar(
+      actions: [
+          Transform.scale(
+            scale:2.1,
+            child: IconButton(onPressed: () {}, icon: Image.asset('assets/logo.png'),)
+        )],
+      elevation: 15,
+      shadowColor: Color.fromARGB(255, 99, 142, 53),
+      title: Text('Expenses')),
       drawer: MenuDrawer(),
       body:  Container(
         decoration: BoxDecoration(

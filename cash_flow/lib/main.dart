@@ -20,7 +20,8 @@ class Pocketful extends StatelessWidget {
         '/add':(context) => ExpensesScreen(),
       },
       initialRoute: '/',
-      theme: ThemeData(appBarTheme: AppBarTheme(color: Color.fromARGB(255, 59, 125, 62))),
+      theme: ThemeData(appBarTheme: 
+      AppBarTheme(color: Color.fromARGB(255, 59, 125, 62))),
     );
   }
 }

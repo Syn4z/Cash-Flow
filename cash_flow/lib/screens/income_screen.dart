@@ -12,10 +12,15 @@ class IncomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Transform.scale(
+            scale:2.1,
+            child: IconButton(onPressed: () {}, icon: Image.asset('assets/logo.png'),)
+        )],
         elevation: 15,
         shadowColor: Color.fromARGB(255, 99, 142, 53),
         title: Container(
-        child: Text('Pocketfull'),),),
+        child: Text('Income'),),),
       drawer: MenuDrawer(),
       body:  Container(
         decoration: BoxDecoration(
