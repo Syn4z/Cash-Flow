@@ -68,31 +68,31 @@ class MenuDrawer extends StatelessWidget {
               color: Colors.black,
             ),
             ListTile(
-              leading: Icon(Icons.home),
+              leading: Icon(Icons.home,color: Colors.lightBlueAccent,),
               title: Text('Home'),
               onTap: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => MainScreen())),
             ),
             ListTile(
-              leading: Icon(Icons.attach_money),
+              leading: Icon(Icons.attach_money,color: Colors.green,),
               title: Text('Income'),
               onTap: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => IncomeScreen())),
             ),
             ListTile(
-              leading: Icon(Icons.analytics_outlined),
+              leading: Icon(Icons.analytics_outlined,color: Colors.purpleAccent,),
               title: Text('Expenses'),
               onTap: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => ExpensesScreen())),
             ),
             ListTile(
-              leading: Icon(Icons.auto_graph),
+              leading: Icon(Icons.auto_graph,color: Colors.amber,),
               title: Text('Goals'),
               onTap: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => GoalsScreen())),
             ),
             ListTile(
-              leading: Icon(Icons.auto_stories_outlined),
+              leading: Icon(Icons.auto_stories_outlined,color: Color.fromARGB(255, 183, 73, 65),),
               title: Text('Debts'),
               onTap: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => DebtsScreen())),
@@ -101,7 +101,7 @@ class MenuDrawer extends StatelessWidget {
               color: Colors.black,
             ),
             ListTile(
-              leading: Icon(Icons.app_settings_alt_outlined),
+              leading: Icon(Icons.app_settings_alt_outlined,color: Colors.black,),
               title: Text('Settings'),
               onTap: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => SettingsScreen())),

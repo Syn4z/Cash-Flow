@@ -23,13 +23,15 @@ class AboutScreen extends StatelessWidget {
         elevation: 15,
         shadowColor: Color.fromARGB(255, 99, 142, 53),
         title: Container(
-          child: Text('Income'),
+          child: Text('About'),
         ),
       ),
       drawer: MenuDrawer(),
       body: Container(
+        
         decoration: BoxDecoration(),
       ),
+      backgroundColor: Colors.grey,
     );
   }
 }

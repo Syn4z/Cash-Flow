@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:test1/shared/side_actions.dart';
 import '../shared/menu_drawer.dart';
 import '../shared/menu_bottom.dart';
 
@@ -16,7 +17,10 @@ class MainScreen extends StatelessWidget {
         actions: [
           Transform.scale(
             scale:2.1,
-            child: IconButton(onPressed: () {}, icon: Image.asset('assets/logo.png'),)
+            child: IconButton(onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MainScreen()));
+                  }, icon: Image.asset('assets/logo.png'),)
         )],
         elevation: 15,
         shadowColor: Color.fromARGB(255, 99, 142, 53),
@@ -43,7 +47,7 @@ class MainScreen extends StatelessWidget {
             style: TextStyle(fontSize: 22, shadows: const [
               Shadow(
                 offset: Offset(1.0, 1.0),
-                blurRadius: 2.0,
+                blurRadius: 1.0,
                 color: Colors.grey,
               )
             ]),

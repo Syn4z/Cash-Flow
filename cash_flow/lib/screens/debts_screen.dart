@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:test1/screens/main_screen.dart';
 import 'package:test1/shared/menu_drawer.dart';
 
 class DebtsScreen extends StatelessWidget {
@@ -15,7 +16,10 @@ class DebtsScreen extends StatelessWidget {
         actions: [
           Transform.scale(
             scale:2.1,
-            child: IconButton(onPressed: () {}, icon: Image.asset('assets/logo.png'),)
+            child: IconButton(onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MainScreen()));
+                  }, icon: Image.asset('assets/logo.png'),)
         )],
         elevation: 15,
         shadowColor: Color.fromARGB(255, 99, 142, 53),
@@ -40,9 +44,10 @@ class DebtsScreen extends StatelessWidget {
           children: [
             FloatingActionButton(
               heroTag: 'btn1',
-              child: Icon(Icons.home),
-              backgroundColor: Color.fromARGB(255, 59, 125, 62),
-              onPressed:() {},),
+              child: Icon(Icons.home,color: Colors.green,),
+              backgroundColor: Colors.white,
+              onPressed:() {Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MainScreen()));},),
             SizedBox(width: 10,),
             FloatingActionButton(
               heroTag: 'btn2',
