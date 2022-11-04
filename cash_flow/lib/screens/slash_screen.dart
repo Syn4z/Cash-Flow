@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 
 class SlashScr extends StatefulWidget {
   const SlashScr({super.key});
@@ -73,7 +74,10 @@ class _SlashScrState extends State<SlashScr> {
         height: 63,
         margin: EdgeInsets.only(top: 20),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Login()));
+          },
           child: Text(
             'Sign In',
             style: TextStyle(

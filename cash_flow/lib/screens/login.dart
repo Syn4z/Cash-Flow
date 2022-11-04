@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/blueButton.dart';
+import '../widgets/input.dart';
+import 'package:test1/screens/newAcc1.dart';
+
 class Login extends StatefulWidget {
   const Login({super.key});
   @override
@@ -52,7 +56,16 @@ class _LoginState extends State<Login> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0x00ffffff),
                     shadowColor: Color(0x00ffffff),
-                  )))
+                  ))),
+          InputBar(
+            text: 'Your email',
+            upperMargin: 60,
+          ),
+          InputBar(
+            text: 'Your password',
+            upperMargin: 18,
+          ),
+          blueBtn(text: 'Sign In', upperMargin: 42, widgetName: newAcc1()),
         ])));
   }
 }
