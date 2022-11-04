@@ -10,7 +10,8 @@ class UserScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: Text('User Account')),
+        appBar: AppBar(title: Text('User Account',
+        style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.bold ),)),
         body: Padding(
           padding: const EdgeInsets.all(100),
           child: 

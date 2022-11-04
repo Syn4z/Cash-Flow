@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
+=======
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+>>>>>>> 70d16aa03025913588f12050e4a7a5084db81e40
 
 import 'dart:io';
 
@@ -12,7 +16,13 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
+    var size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
+=======
+    return Scaffold(
+>>>>>>> 70d16aa03025913588f12050e4a7a5084db81e40
       appBar: AppBar(
         actions: [
           Transform.scale(
@@ -28,11 +38,30 @@ class MainScreen extends StatelessWidget {
         elevation: 15,
         shadowColor: Color.fromARGB(255, 99, 142, 53),
         title: Container(
+<<<<<<< HEAD
+          child: Text(
+            'Pocketfull',
+            style: TextStyle(
+                fontFamily: 'Montserrat', fontWeight: FontWeight.bold),
+          ),
+=======
           child: Text('Pocketfull'),
+>>>>>>> 70d16aa03025913588f12050e4a7a5084db81e40
         ),
       ),
       drawer: MenuDrawer(),
       bottomNavigationBar: MenuBottom(),
+<<<<<<< HEAD
+      body: Stack(
+        children: <Widget>[
+          Container(
+            height: size.height * .45,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255,116,198,157)
+            ),
+          )
+        ],
+=======
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
@@ -58,6 +87,7 @@ class MainScreen extends StatelessWidget {
             ]),
           ),
         )),
+>>>>>>> 70d16aa03025913588f12050e4a7a5084db81e40
       ),
     );
   }

@@ -13,6 +13,10 @@ class ExpensesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
+      
+=======
+>>>>>>> 70d16aa03025913588f12050e4a7a5084db81e40
       appBar: AppBar(
           actions: [
             Transform.scale(
@@ -26,6 +30,30 @@ class ExpensesScreen extends StatelessWidget {
                 ))
           ],
           elevation: 15,
+<<<<<<< HEAD
+          shadowColor: Color.fromARGB(255, 45,106,79),
+          title: Text('Expenses',
+          style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.bold ),)),
+      drawer: MenuDrawer(),
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/bkg.jpg'), fit: BoxFit.cover)),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
+          child: Container(
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: FloatingActionButton(
+              heroTag: 'Add',
+              onPressed: () {},
+              child: Icon(Icons.add),
+              backgroundColor: Color.fromARGB(255, 45,106,79),
+            ),        
+      );
+=======
           shadowColor: Color.fromARGB(255, 99, 142, 53),
           title: Text('Expenses')),
       drawer: MenuDrawer(),
@@ -213,5 +241,6 @@ class _ExpenseFormState extends State<ExpenseForm> {
         ),
       ),
     );
+>>>>>>> 70d16aa03025913588f12050e4a7a5084db81e40
   }
 }

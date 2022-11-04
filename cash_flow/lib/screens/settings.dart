@@ -29,7 +29,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Settings UI", style: TextStyle(fontSize: 22)),
+        title: Text("Settings UI", style: TextStyle(fontSize: 22, fontFamily: 'Montserrat',fontWeight: FontWeight.bold)),
         leading: IconButton(
             onPressed: () {
               Navigator.push(context,

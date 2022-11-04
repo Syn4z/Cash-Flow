@@ -21,9 +21,10 @@ class AboutScreen extends StatelessWidget {
               ))
         ],
         elevation: 15,
-        shadowColor: Color.fromARGB(255, 99, 142, 53),
+        shadowColor: Color.fromARGB(255,64,145,108),
         title: Container(
-          child: Text('About'),
+          child: Text('About',
+          style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.bold ),),
         ),
       ),
       drawer: MenuDrawer(),
