@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:test1/screens/expenses_screen.dart';
-import 'package:test1/screens/main_screen.dart';
-import 'package:test1/screens/slash_screen.dart';
+import 'package:test1/screens/expenses.dart';
+import 'package:test1/screens/main.dart';
+import 'package:test1/screens/slash.dart';
 import 'package:test1/screens/login.dart';
 
 void main() {

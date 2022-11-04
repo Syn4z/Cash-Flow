@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test1/screens/main_screen.dart';
+import 'package:test1/screens/main.dart';
 
 import '../widgets/blueButton.dart';
 import '../widgets/input.dart';

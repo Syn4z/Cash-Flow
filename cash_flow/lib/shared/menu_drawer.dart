@@ -1,14 +1,14 @@
 // ignore_for_file: avoid_function_literals_in_foreach_calls, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:test1/screens/about_screen.dart';
-import 'package:test1/screens/settings_screen.dart';
-import 'package:test1/screens/user_screen.dart';
-import '../screens/main_screen.dart';
-import '../screens/debts_screen.dart';
-import '../screens/expenses_screen.dart';
-import '../screens/goals_screen.dart';
-import '../screens/income_screen.dart';
+import 'package:test1/screens/about.dart';
+import 'package:test1/screens/settings.dart';
+import 'package:test1/screens/user.dart';
+import '../screens/main.dart';
+import '../screens/debts.dart';
+import '../screens/expenses.dart';
+import '../screens/goals.dart';
+import '../screens/income.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({super.key});

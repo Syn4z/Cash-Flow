@@ -3,7 +3,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:test1/screens/main_screen.dart';
+import 'package:test1/screens/main.dart';
 import 'package:test1/shared/menu_bottom.dart';
 import 'package:test1/shared/menu_drawer.dart';
 
@@ -45,7 +45,7 @@ class ExpensesScreen extends StatelessWidget {
         child: Row(
           children: [
             FloatingActionButton(
-              heroTag: 'btn1',
+              heroTag: 'Home',
               child: Icon(
                 Icons.home,
                 color: Colors.green,
@@ -58,8 +58,10 @@ class ExpensesScreen extends StatelessWidget {
               width: 10,
             ),
             FloatingActionButton(
-              heroTag: 'btn2',
-              onPressed: () {},
+              heroTag: 'Add',
+              onPressed: () {
+                print('you clicked me');
+              },
               child: Icon(Icons.add),
               backgroundColor: Color.fromARGB(255, 59, 125, 62),
             ),

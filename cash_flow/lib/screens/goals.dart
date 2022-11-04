@@ -1,13 +1,11 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:test1/screens/main_screen.dart';
+import 'package:test1/screens/main.dart';
 import 'package:test1/shared/menu_drawer.dart';
 
-class DebtsScreen extends StatelessWidget {
-  const DebtsScreen({super.key});
+class GoalsScreen extends StatelessWidget {
+  const GoalsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +22,7 @@ class DebtsScreen extends StatelessWidget {
         elevation: 15,
         shadowColor: Color.fromARGB(255, 99, 142, 53),
         title: Container(
-        child: Text('Debts'),),),
+        child: Text('Goals'),),),
       drawer: MenuDrawer(),
       body:  Container(
         decoration: BoxDecoration(

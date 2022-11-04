@@ -4,7 +4,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:test1/screens/main_screen.dart';
+import 'package:test1/screens/main.dart';
 import 'package:test1/shared/menu_drawer.dart';
 
 class SettingsScreen extends StatefulWidget {
