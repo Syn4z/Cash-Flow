@@ -16,16 +16,21 @@ class MainScreen extends StatelessWidget {
       appBar: AppBar(
         actions: [
           Transform.scale(
-            scale:2.1,
-            child: IconButton(onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MainScreen()));
-                  }, icon: Image.asset('assets/logo.png'),)
-        )],
+              scale: 2.1,
+              child: IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MainScreen()));
+                },
+                icon: Image.asset('assets/logo.png'),
+              ))
+        ],
         elevation: 15,
         shadowColor: Color.fromARGB(255, 99, 142, 53),
         title: Container(
-        child: Text('Pocketfull'),),),
+          child: Text('Pocketfull'),
+        ),
+      ),
       drawer: MenuDrawer(),
       bottomNavigationBar: MenuBottom(),
       body: Container(
@@ -57,5 +62,3 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
-
-
