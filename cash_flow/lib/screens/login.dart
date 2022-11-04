@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test1/screens/main_screen.dart';
 
 import '../widgets/blueButton.dart';
 import '../widgets/input.dart';
@@ -65,7 +66,7 @@ class _LoginState extends State<Login> {
             text: 'Your password',
             upperMargin: 18,
           ),
-          blueBtn(text: 'Sign In', upperMargin: 42, widgetName: newAcc1()),
+          blueBtn(text: 'Sign In', upperMargin: 42, widgetName: MainScreen()),
         ])));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test1/screens/newAcc1.dart';
 import 'login.dart';
 
 class SlashScr extends StatefulWidget {
@@ -52,7 +53,10 @@ class _SlashScrState extends State<SlashScr> {
         height: 63,
         margin: EdgeInsets.only(top: 67),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => newAcc1()));
+          },
           child: Text(
             'Create a new account',
             style: TextStyle(
