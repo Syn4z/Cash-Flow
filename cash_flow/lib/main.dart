@@ -21,7 +21,8 @@ class Pocketful extends StatelessWidget {
       },
       initialRoute: '/',
       theme: ThemeData(
-          appBarTheme: AppBarTheme(color: Color.fromARGB(255, 59, 125, 62))),
+          appBarTheme: AppBarTheme(color: Color.fromARGB(255, 59, 125, 62)),
+          fontFamily: 'Montserrat'),
     );
   }
 }
