@@ -10,8 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model GraphQL{
+  id Int @id @default(autoincrement())
+  name String
 }

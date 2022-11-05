@@ -1,0 +1,28 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateGraphqlInput {
+  name: String!
+}
+
+type Graphql {
+  id: Int!
+  name: String!
+}
+
+type Mutation {
+  createGraphql(createGraphqlInput: CreateGraphqlInput!): Graphql!
+  removeGraphql(id: Int!): Graphql!
+  updateGraphql(updateGraphqlInput: UpdateGraphqlInput!): Graphql!
+}
+
+type Query {
+  graphql(id: Int!): Graphql!
+  graphqls: [Graphql!]!
+}
+
+input UpdateGraphqlInput {
+  id: Int!
+  name: String!
+}
