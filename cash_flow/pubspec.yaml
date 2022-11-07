@@ -40,6 +40,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -60,8 +61,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/
+    - assets/images/img1.png
+    - assets/images/google_icon.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -75,6 +78,18 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+      - family: Montserrat
+        fonts:
+          - asset: assets/fonts/Montserrat_Font_Family/MontserratBold700.ttf
+          - asset: assets/fonts/Montserrat_Font_Family/MontserratExtraBold800.ttf
+          - asset: assets/fonts/Montserrat_Font_Family/MontserratLight300.ttf
+          - asset: assets/fonts/Montserrat_Font_Family/MontserratMediumItalic500.ttf
+          - asset: assets/fonts/Montserrat_Font_Family/MontserratRegular400.ttf
+      - family: Inter
+        fonts:
+          - asset: assets/fonts/Inter_Font_Family/InterRegular400.ttf
+          - asset: assets/fonts/Inter_Font_Family/InterBold700.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

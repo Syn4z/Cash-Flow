@@ -1,0 +1,49 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Graphql {
+  id: Int!
+  name: String!
+}
+
+type Mutation {
+  removeGraphql(id: Int!): Graphql!
+  signin(SignInInput: SignInInput!): SignResponse!
+  signup(SignUpInput: SignUpInput!): SignResponse!
+  updateGraphql(updateGraphqlInput: UpdateGraphqlInput!): Graphql!
+}
+
+type Query {
+  graphql(id: Int!): Graphql!
+}
+
+input SignInInput {
+  email: String!
+  password: String!
+}
+
+type SignResponse {
+  accesToken: String!
+  refreshToken: String!
+  user: User!
+}
+
+input SignUpInput {
+  email: String!
+  password: String!
+  username: String!
+}
+
+input UpdateGraphqlInput {
+  email: String
+  id: Int!
+  password: String
+  username: String
+}
+
+type User {
+  email: String!
+  id: Int!
+  username: String!
+}
