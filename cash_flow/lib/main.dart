@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test1/screens/expenses.dart';
+import 'package:test1/screens/addExpense.dart';
 import 'package:test1/screens/main.dart';
 import 'package:test1/screens/slash.dart';
 import 'package:test1/screens/login.dart';
@@ -17,11 +17,11 @@ class Pocketful extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => Slash(),
-        '/add': (context) => ExpensesScreen(),
+        '/add': (context) => AddExpenseScreen(),
       },
       initialRoute: '/',
       theme: ThemeData(
-          appBarTheme: AppBarTheme(color: Color.fromARGB(255, 64,145,108)),
+          appBarTheme: AppBarTheme(color: Color.fromARGB(255, 64, 145, 108)),
           fontFamily: 'Montserrat'),
     );
   }

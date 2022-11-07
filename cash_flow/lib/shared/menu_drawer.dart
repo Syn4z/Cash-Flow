@@ -2,11 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:test1/screens/about.dart';
+import 'package:test1/screens/expenses.dart';
 import 'package:test1/screens/settings.dart';
 import 'package:test1/screens/user.dart';
 import '../screens/main.dart';
 import '../screens/debts.dart';
-import '../screens/expenses.dart';
+import '../screens/addExpense.dart';
 import '../screens/goals.dart';
 import '../screens/income.dart';
 

@@ -28,7 +28,16 @@ class IncomeScreen extends StatelessWidget {
         child: Text('Income',
         style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.bold ),),),),
       drawer: MenuDrawer(),
-      body:  Container(),
+      body: Stack(children: [
+        Container(
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
+            child: Container(
+              decoration: BoxDecoration(color: Colors.white.withOpacity(0.0)),
+            ),
+          ),
+        ),
+      ]),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
       floatingActionButton: FloatingActionButton(
         heroTag: 'Add',
