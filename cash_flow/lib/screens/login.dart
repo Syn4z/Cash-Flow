@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:test1/screens/main.dart';
+import 'package:test1/screens/slash.dart';
 
+import '../widgets/backButton.dart';
 import '../widgets/nextButton.dart';
 import '../widgets/input.dart';
 import 'main.dart';
