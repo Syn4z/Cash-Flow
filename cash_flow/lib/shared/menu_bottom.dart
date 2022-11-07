@@ -20,7 +20,7 @@ class MenuBottom extends StatelessWidget {
       },
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add Spending'),
+        BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add Expense'),
       ],
     );
   }
