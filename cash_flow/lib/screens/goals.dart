@@ -18,7 +18,7 @@ class GoalsScreen extends StatelessWidget {
             child: IconButton(onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => MainScreen()));
-                  }, icon: Image.asset('assets/logo.png'),)
+                  }, icon: Image.asset('assets/images/logo.png'),)
         )],
         elevation: 15,
         shadowColor: Color.fromARGB(255, 99, 142, 53),

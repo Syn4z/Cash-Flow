@@ -17,7 +17,7 @@ class UserScreen extends StatelessWidget {
           child: 
           Container(
             child: Image.asset(
-              'assets/user.png',
+              'assets/images/user.png',
               height: 200,
               width: 200,
             ),

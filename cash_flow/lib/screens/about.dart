@@ -17,7 +17,7 @@ class AboutScreen extends StatelessWidget {
               scale: 2.1,
               child: IconButton(
                 onPressed: () {},
-                icon: Image.asset('assets/logo.png'),
+                icon: Image.asset('assets/images/logo.png'),
               ))
         ],
         elevation: 15,

@@ -13,39 +13,18 @@ class ExpensesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 149, 213, 178),
-        appBar: AppBar(
-            actions: [
-              Transform.scale(
-                  scale: 2.1,
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => MainScreen()));
-                    },
-                    icon: Image.asset('assets/logo.png'),
-                  ))
-            ],
-            elevation: 15,
-            shadowColor: Color.fromARGB(255, 45, 106, 79),
-            title: Text(
-              'Expenses',
-              style: TextStyle(
-                  fontFamily: 'Montserrat', fontWeight: FontWeight.bold),
-            )),
-        drawer: MenuDrawer(),
-        body: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            Container(
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
-                child: Container(),
-              ),
-            ),
-            ExpenseForm(),
+      backgroundColor: Color.fromARGB(255,149,213,178),
+      appBar: AppBar(
+          actions: [
+            Transform.scale(
+                scale: 2.1,
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MainScreen()));
+                  },
+                  icon: Image.asset('assets/images/logo.png'),
+                ))
           ],
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
