@@ -1,21 +1,24 @@
 import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { GraphqlService } from './graphql.service';
 import { Graphql } from './entities/graphql.entity';
-import { CreateGraphqlInput } from './dto/create-graphql.input';
+import { SignUpInput } from './dto/signup-input';
 import { UpdateGraphqlInput } from './dto/update-graphql.input';
+import { sign } from 'crypto';
+import { SignResponse } from './dto/sign-response';
+import { SignInInput } from './dto/signin-input';
 
 @Resolver(() => Graphql)
 export class GraphqlResolver {
   constructor(private readonly graphqlService: GraphqlService) {}
 
-  @Mutation(() => Graphql)
-  createGraphql(@Args('createGraphqlInput') createGraphqlInput: CreateGraphqlInput) {
-    return this.graphqlService.create(createGraphqlInput);
+  @Mutation(() => SignResponse)
+  signup(@Args('SignUpInput') signUpInput: SignUpInput) {
+    return this.graphqlService.signup(signUpInput);
   }
 
-  @Query(() => [Graphql], { name: 'graphqls' })
-  findAll() {
-    return this.graphqlService.findAll();
+  @Mutation(() => SignResponse)
+  signin(@Args('SignInInput') signInInput: SignInInput) {
+    return this.graphqlService.signin(signInInput);
   }
 
   @Query(() => Graphql, { name: 'graphql' })

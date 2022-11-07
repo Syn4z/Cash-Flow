@@ -2,27 +2,48 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-input CreateGraphqlInput {
-  name: String!
-}
-
 type Graphql {
   id: Int!
   name: String!
 }
 
 type Mutation {
-  createGraphql(createGraphqlInput: CreateGraphqlInput!): Graphql!
   removeGraphql(id: Int!): Graphql!
+  signin(SignInInput: SignInInput!): SignResponse!
+  signup(SignUpInput: SignUpInput!): SignResponse!
   updateGraphql(updateGraphqlInput: UpdateGraphqlInput!): Graphql!
 }
 
 type Query {
   graphql(id: Int!): Graphql!
-  graphqls: [Graphql!]!
+}
+
+input SignInInput {
+  email: String!
+  password: String!
+}
+
+type SignResponse {
+  accesToken: String!
+  refreshToken: String!
+  user: User!
+}
+
+input SignUpInput {
+  email: String!
+  password: String!
+  username: String!
 }
 
 input UpdateGraphqlInput {
+  email: String
   id: Int!
-  name: String!
+  password: String
+  username: String
+}
+
+type User {
+  email: String!
+  id: Int!
+  username: String!
 }
