@@ -35,7 +35,7 @@ class IncomeScreen extends StatelessWidget {
             decoration: BoxDecoration(color:Colors.white.withOpacity(0.0)),
           ),),
         ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
       floatingActionButton: FloatingActionButton(
               heroTag: 'Add',
               onPressed: () {},

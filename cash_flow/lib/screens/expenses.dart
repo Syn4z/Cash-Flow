@@ -13,10 +13,7 @@ class ExpensesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
-      
-=======
->>>>>>> 70d16aa03025913588f12050e4a7a5084db81e40
+      backgroundColor: Color.fromARGB(255,149,213,178),
       appBar: AppBar(
           actions: [
             Transform.scale(
@@ -30,81 +27,30 @@ class ExpensesScreen extends StatelessWidget {
                 ))
           ],
           elevation: 15,
-<<<<<<< HEAD
           shadowColor: Color.fromARGB(255, 45,106,79),
           title: Text('Expenses',
           style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.bold ),)),
-      drawer: MenuDrawer(),
-      body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/bkg.jpg'), fit: BoxFit.cover)),
-        child: BackdropFilter(
+      drawer: MenuDrawer(),    
+      body: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+           Container(
+          child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
           child: Container(
           ),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+          ExpenseForm(),
+        ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
       floatingActionButton: FloatingActionButton(
               heroTag: 'Add',
               onPressed: () {},
               child: Icon(Icons.add),
               backgroundColor: Color.fromARGB(255, 45,106,79),
-            ),        
-      );
-=======
-          shadowColor: Color.fromARGB(255, 99, 142, 53),
-          title: Text('Expenses')),
-      drawer: MenuDrawer(),
-      body: Stack(
-        alignment: Alignment.center,
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/bkg.jpg'), fit: BoxFit.cover)),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
-              child: Container(
-                decoration: BoxDecoration(color: Colors.white.withOpacity(0.0)),
-              ),
-            ),
-          ),
-          ExpenseForm(),
-        ],
-      ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(left: 280),
-        child: Row(
-          children: [
-            FloatingActionButton(
-              heroTag: 'Home',
-              child: Icon(
-                Icons.home,
-                color: Colors.green,
-              ),
-              backgroundColor: Colors.white,
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MainScreen()));
-              },
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            FloatingActionButton(
-              heroTag: 'Add',
-              onPressed: () {
-                print('you clicked me');
-              },
-              child: Icon(Icons.add),
-              backgroundColor: Color.fromARGB(255, 59, 125, 62),
-            ),
-          ],
-        ),
-      ),
-    );
+            ));
   }
 }
 
@@ -130,7 +76,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
       child: Padding(
         padding: EdgeInsets.only(
             right: screenWidth / 20,
-            top: screenWidth / 5,
+            top: screenWidth / 7,
             left: screenWidth / 20,
             bottom: screenWidth / 20),
         child: Column(
@@ -141,7 +87,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
-                    color: Color.fromARGB(255, 99, 142, 53))),
+                    color: Color.fromARGB(255, 45,106,79))),
             TextFormField(
               // The validator receives the text that the user has entered.
               validator: (value) {
@@ -156,7 +102,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
-                    color: Color.fromARGB(255, 99, 142, 53))),
+                    color: Color.fromARGB(255, 45,106,79))),
             TextFormField(
               // The validator receives the text that the user has entered.
               validator: (value) {
@@ -171,7 +117,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
-                    color: Color.fromARGB(255, 99, 142, 53))),
+                    color: Color.fromARGB(255, 45,106,79))),
             TextFormField(
               // The validator receives the text that the user has entered.
               validator: (value) {
@@ -186,7 +132,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
-                    color: Color.fromARGB(255, 99, 142, 53))),
+                    color: Color.fromARGB(255, 45,106,79))),
             TextFormField(
               // The validator receives the text that the user has entered.
               validator: (value) {
@@ -205,7 +151,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
                     height: screenHeight * 0.05,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromARGB(255, 99, 142, 53)),
+                          backgroundColor: Color.fromARGB(255, 45,106,79)),
                       onPressed: () {
                         // Validate returns true if the form is valid, or false otherwise.
                         if (_formKey.currentState!.validate()) {
@@ -241,6 +187,5 @@ class _ExpenseFormState extends State<ExpenseForm> {
         ),
       ),
     );
->>>>>>> 70d16aa03025913588f12050e4a7a5084db81e40
   }
 }

@@ -10,6 +10,7 @@ class GoalsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255,149,213,178),
       appBar: AppBar(
         actions: [
           Transform.scale(
@@ -26,18 +27,13 @@ class GoalsScreen extends StatelessWidget {
         style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.bold ),)),),
       drawer: MenuDrawer(),
       body:  Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/bkg.jpg'), 
-            fit: BoxFit.cover)
-        ),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 0,sigmaY: 0),
           child: Container(
             decoration: BoxDecoration(color:Colors.white.withOpacity(0.0)),
           ),),
         ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
       floatingActionButton: FloatingActionButton(
               heroTag: 'Add',
               onPressed: () {},
