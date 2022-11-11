@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 class MenuBottom extends StatelessWidget {
@@ -7,7 +9,9 @@ class MenuBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int _selectedIndex = 0;
     return BottomNavigationBar(
+      fixedColor: Color.fromARGB(255, 45, 106, 79),
       onTap: (int index) {
         switch (index) {
           case 0:
@@ -18,7 +22,7 @@ class MenuBottom extends StatelessWidget {
             break;
         }
       },
-      items: [
+      items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
         BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add Expense'),
       ],

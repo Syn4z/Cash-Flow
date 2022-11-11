@@ -22,7 +22,7 @@ class ExpensesScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 149, 213, 178),
+      backgroundColor: Color.fromARGB(255, 183,228,199),
       appBar: AppBar(
         actions: [
           Transform.scale(

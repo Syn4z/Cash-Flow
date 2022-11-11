@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, dead_code
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, dead_code, sort_child_properties_last
 
 import 'dart:ui';
 
@@ -29,12 +29,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Settings UI", style: TextStyle(fontSize: 22, fontFamily: 'Montserrat',fontWeight: FontWeight.bold)),
+        title: Text("Settings UI",
+            style: TextStyle(
+                fontSize: 22,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.bold)),
         leading: IconButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(
-                    builder: (context) => const MainScreen()));
+                  MaterialPageRoute(builder: (context) => const MainScreen()));
             },
             icon: Icon(
               Icons.arrow_back,
@@ -74,15 +77,33 @@ class _SettingsScreenState extends State<SettingsScreen> {
             buildAccountOption2("Dark Mode", valNotify1, onChangeFunction1),
             SizedBox(height: 50),
             Center(
-              child: OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(horizontal: 40),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20))),
-                onPressed: () {},
-                child: Text("Sign out",
-                    style: TextStyle(
-                        fontSize: 16, letterSpacing: 2.2, color: Colors.black)),
+              child: Padding(
+                padding: const EdgeInsets.all(70.0),
+                child: OutlinedButton(
+                  onPressed: () {},
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Sign Out",
+                          style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w300,
+                              color: Color.fromARGB(255, 45, 106, 79)),
+                        ),
+                        SizedBox(width: 5,),
+                        Icon(Icons.arrow_forward,
+                            color: Color.fromARGB(255, 45, 106, 79))
+                      ]),
+                  style: ButtonStyle(
+                      side: MaterialStateProperty.all(BorderSide(
+                          color: Color.fromARGB(255, 45, 106, 79), width: 1.4)),
+                      padding: MaterialStateProperty.all(
+                          EdgeInsets.symmetric(vertical: 20, horizontal: 50)),
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(40))))),
+                ),
               ),
             )
           ],
