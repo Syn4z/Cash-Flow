@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:test1/screens/addExpense.dart';
 import 'package:test1/screens/main.dart';
+import 'package:test1/screens/updateExpense.dart';
 import 'package:test1/shared/menu_drawer.dart';
 
 class ExpensesScreen extends StatelessWidget {
@@ -12,6 +13,14 @@ class ExpensesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    void _navigateToUpdateExpenseScreen(BuildContext context) {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => UpdateExpenseScreen()));
+    }
+
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 149, 213, 178),
       appBar: AppBar(
@@ -46,6 +55,122 @@ class ExpensesScreen extends StatelessWidget {
             ),
           ),
         ),
+        ListView(
+          padding: EdgeInsets.only(top: screenHeight / 25),
+          children: <Widget>[
+            ListTile(
+                title: InkWell(
+              child: Container(
+                padding: EdgeInsets.only(
+                    bottom: screenHeight / 50, top: screenHeight / 50),
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(width: 3, color: Colors.white),
+                  ),
+                ),
+                child: Stack(children: [
+                  Icon(Icons.directions_bus),
+                  Padding(
+                    padding: EdgeInsets.only(left: screenWidth / 9),
+                    child: Text(
+                      'Public Transit',
+                      style: TextStyle(
+                          color: Colors.indigo,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20),
+                    ),
+                  ),
+                  Padding(
+                      padding: EdgeInsets.only(left: screenWidth / 1.4),
+                      child: Text(
+                        '-\$2.75',
+                        style: TextStyle(
+                            color: Colors.red.shade600,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18),
+                      )),
+                ]),
+              ),
+              onTap: () {
+                _navigateToUpdateExpenseScreen(context);
+              },
+            )),
+            ListTile(
+                title: InkWell(
+              child: Container(
+                padding: EdgeInsets.only(
+                    bottom: screenHeight / 50, top: screenHeight / 50),
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(width: 3, color: Colors.white),
+                  ),
+                ),
+                child: Stack(children: [
+                  Icon(Icons.restaurant),
+                  Padding(
+                    padding: EdgeInsets.only(left: screenWidth / 9),
+                    child: Text(
+                      'Tiramisu',
+                      style: TextStyle(
+                          color: Colors.indigo,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20),
+                    ),
+                  ),
+                  Padding(
+                      padding: EdgeInsets.only(left: screenWidth / 1.4),
+                      child: Text(
+                        '-\$33.99',
+                        style: TextStyle(
+                            color: Colors.red.shade600,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18),
+                      )),
+                ]),
+              ),
+              onTap: () {
+                _navigateToUpdateExpenseScreen(context);
+              },
+            )),
+            ListTile(
+                title: InkWell(
+              child: Container(
+                padding: EdgeInsets.only(
+                    bottom: screenHeight / 50, top: screenHeight / 50),
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(width: 3, color: Colors.white),
+                  ),
+                ),
+                child: Stack(children: [
+                  Icon(Icons.school),
+                  Padding(
+                    padding: EdgeInsets.only(left: screenWidth / 9),
+                    child: Text(
+                      'College books',
+                      style: TextStyle(
+                          color: Colors.indigo,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20),
+                    ),
+                  ),
+                  Padding(
+                      padding: EdgeInsets.only(left: screenWidth / 1.4),
+                      child: Text(
+                        '-\$249.99',
+                        style: TextStyle(
+                            color: Colors.red.shade600,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18),
+                      )),
+                ]),
+              ),
+              onTap: () {
+                _navigateToUpdateExpenseScreen(context);
+              },
+            )),
+          ],
+        ),
       ]),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
       floatingActionButton: FloatingActionButton(
@@ -53,13 +178,14 @@ class ExpensesScreen extends StatelessWidget {
         onPressed: () {
           _navigateToAddExpenseScreenScreen(context);
         },
-        child: Icon(Icons.add),
         backgroundColor: Color.fromARGB(255, 45, 106, 79),
+        child: Icon(Icons.add),
       ),
     );
   }
 
   void _navigateToAddExpenseScreenScreen(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => AddExpenseScreen()));
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => AddExpenseScreen()));
   }
 }

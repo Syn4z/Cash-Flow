@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:test1/screens/expenses.dart';
 import 'package:test1/screens/main.dart';
 
-class AddExpenseScreen extends StatelessWidget {
-  const AddExpenseScreen({super.key});
+class UpdateExpenseScreen extends StatelessWidget {
+  const UpdateExpenseScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class AddExpenseScreen extends StatelessWidget {
           elevation: 15,
           shadowColor: Color.fromARGB(255, 45, 106, 79),
           title: Text(
-            'Add Expense',
+            'Update Expense',
             style: TextStyle(
                 fontFamily: 'Montserrat', fontWeight: FontWeight.bold),
           )),
@@ -205,14 +205,32 @@ class _ExpenseFormState extends State<ExpenseForm> {
                       onPressed: () {
                         _navigateToExpensesScreen(context);
                       },
-                      child: const Text('Cancel',
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 64, 145, 108))),
+                      child: const Text(
+                        'Cancel',
+                        style:
+                            TextStyle(color: Color.fromARGB(255, 64, 145, 108)),
+                      ),
                     ),
                   ),
                 ),
               ],
-            )
+            ),
+            Padding(
+              padding:
+                  EdgeInsets.only(top: screenWidth / 10, left: screenWidth / 4),
+              child: SizedBox(
+                width: screenWidth * 0.4,
+                height: screenHeight * 0.05,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red.shade700),
+                  onPressed: () {
+                    _navigateToExpensesScreen(context);
+                  },
+                  child: const Text('Delete'),
+                ),
+              ),
+            ),
           ],
         ),
       ),
