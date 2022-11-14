@@ -17,6 +17,8 @@ class newAcc1 extends StatefulWidget {
 
 // ignore: camel_case_types
 class _newAcc1State extends State<newAcc1> {
+  final key = GlobalKey<FormState>();
+  final key2 = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -27,32 +29,39 @@ class _newAcc1State extends State<newAcc1> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
           backBtn(upperMargin: screenHeight * 0.05, widgetName: const Slash()),
-          newAccHeader(
+          const newAccHeader(
             color1: Color.fromARGB(255, 82, 183, 136),
             color2: Color.fromARGB(255, 175, 175, 175),
             color3: Color.fromARGB(255, 175, 175, 175),
           ),
           Container(
-            width: screenWidth * 0.7,
-            margin: EdgeInsets.only(top: screenHeight * 0.06),
+            width: screenWidth * 0.65,
+            margin: EdgeInsets.only(top: screenHeight * 0.025),
             child: Image.asset('assets/images/logo.png'),
           ),
           InputBar(
-            text: 'Email',
-            upperMargin: screenHeight * 0.016,
+            formKey: key,
+            email: true,
+            text: 'Your email',
+            upperMargin: screenHeight * 0.002,
           ),
           InputBar(
             text: 'Username',
-            upperMargin: screenHeight * 0.015,
+            upperMargin: screenHeight * 0.007,
           ),
           InputBar(
+            formKey: key2,
+            passwordRegistration: true,
+            obscure: true,
             text: 'Password',
-            upperMargin: screenHeight * 0.015,
+            upperMargin: screenHeight * 0.007,
           ),
           nextBtn(
+              formKey: key,
+              formKey2: key2,
               text: 'Next',
               upperMargin: screenHeight * 0.019,
-              widgetName: newAcc2()),
+              widgetName: const newAcc2()),
         ])));
   }
 }

@@ -28,7 +28,7 @@ class _newAcc2State extends State<newAcc2> {
                 children: [
           backBtn(
               upperMargin: screenHeight * 0.05, widgetName: const newAcc1()),
-          newAccHeader(
+          const newAccHeader(
             color1: Color.fromARGB(255, 82, 183, 136),
             color2: Color.fromARGB(255, 82, 183, 136),
             color3: Color.fromARGB(255, 175, 175, 175),

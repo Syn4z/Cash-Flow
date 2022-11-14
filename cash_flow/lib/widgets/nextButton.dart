@@ -4,11 +4,15 @@ class nextBtn extends StatelessWidget {
   final String text;
   final double upperMargin;
   final Widget widgetName;
+  final GlobalKey<FormState>? formKey;
+  final GlobalKey<FormState>? formKey2;
   const nextBtn(
       {super.key,
       required this.text,
       required this.upperMargin,
-      required this.widgetName});
+      required this.widgetName,
+      this.formKey,
+      this.formKey2});
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +24,21 @@ class nextBtn extends StatelessWidget {
       margin: EdgeInsets.only(top: upperMargin),
       child: ElevatedButton(
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => widgetName));
+          final isValidForm = formKey?.currentState?.validate();
+          final isValidForm2 = formKey2?.currentState?.validate();
+          if (isValidForm2 == null) {
+            if (isValidForm == null || isValidForm == true) {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => widgetName));
+            } else {
+              return;
+            }
+          } else if (isValidForm == true && isValidForm2 == true) {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => widgetName));
+          } else {
+            return;
+          }
         },
         style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
