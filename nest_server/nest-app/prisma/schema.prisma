@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,12 +7,36 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User{
-  id Int @id @default(autoincrement())
-  username String
-  email String @unique
-  hashedPassword String
+model User {
+  id                 Int      @id @default(autoincrement())
+  username           String
+  email              String
+  hashedPassword     String
   hashedRefreshToken String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @default(now())
+}
+
+model Expense {
+  id          BigInt  @id(map: "expense_pkey")
+  type        String  @db.VarChar(20)
+  category    String? @db.VarChar(50)
+  amount      Float
+  currency    String  @db.VarChar(50)
+  description String? @db.VarChar(100)
+}
+
+model Dept {
+  id       BigInt @id
+  amount   Float
+  currency String @db.VarChar(20)
+  source   String @db.VarChar(50)
+}
+
+model Income {
+  id       BigInt @id
+  type     String @db.VarChar(20)
+  category String? @db.VarChar(50)
+  amount   Float
+  currency String @db.VarChar(50)
 }

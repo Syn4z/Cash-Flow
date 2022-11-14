@@ -2,12 +2,9 @@ import { Field, ObjectType } from '@nestjs/graphql';
 import { User } from '../../user/user.entity';
 
 @ObjectType()
-export class SignResponse {
+export class RemoveResponse {
     @Field()
-    accesToken: string;
-
-    @Field()
-    refreshToken: string;
+    id: number;
 
     @Field()
     user: User;

@@ -6,6 +6,8 @@ import { UpdateGraphqlInput } from './dto/update-graphql.input';
 import { sign } from 'crypto';
 import { SignResponse } from './dto/sign-response';
 import { SignInInput } from './dto/signin-input';
+import { RemoveResponse } from './dto/remove-response';
+import { RemoveInput } from './dto/remove-input';
 
 @Resolver(() => Graphql)
 export class GraphqlResolver {
@@ -21,18 +23,21 @@ export class GraphqlResolver {
     return this.graphqlService.signin(signInInput);
   }
 
+  // TO DO
   @Query(() => Graphql, { name: 'graphql' })
   findOne(@Args('id', { type: () => Int }) id: number) {
     return this.graphqlService.findOne(id);
   }
+  
 
+  // TO DO
   @Mutation(() => Graphql)
   updateGraphql(@Args('updateGraphqlInput') updateGraphqlInput: UpdateGraphqlInput) {
     return this.graphqlService.update(updateGraphqlInput.id, updateGraphqlInput);
   }
 
-  @Mutation(() => Graphql)
-  removeGraphql(@Args('id', { type: () => Int }) id: number) {
-    return this.graphqlService.remove(id);
+  @Mutation(() => RemoveResponse)
+  remove(@Args('RemoveInput') removeInput: RemoveInput) {
+    return this.graphqlService.remove(removeInput);
   }
 }

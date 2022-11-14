@@ -8,7 +8,7 @@ type Graphql {
 }
 
 type Mutation {
-  removeGraphql(id: Int!): Graphql!
+  remove(RemoveInput: RemoveInput!): RemoveResponse!
   signin(SignInInput: SignInInput!): SignResponse!
   signup(SignUpInput: SignUpInput!): SignResponse!
   updateGraphql(updateGraphqlInput: UpdateGraphqlInput!): Graphql!
@@ -16,6 +16,16 @@ type Mutation {
 
 type Query {
   graphql(id: Int!): Graphql!
+}
+
+input RemoveInput {
+  email: String!
+  password: String!
+}
+
+type RemoveResponse {
+  id: Float!
+  user: User!
 }
 
 input SignInInput {
