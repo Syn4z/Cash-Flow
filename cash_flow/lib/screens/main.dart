@@ -202,7 +202,7 @@ class InfoCard extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 64, 145, 108),
         radius: 25,
       ),
-      this.subInfoText = "15400 mdls",
+      this.subInfoText = "15400 MDL",
       this.subInfoTitle = "Current Month Income",
       Key? key})
       : super(key: key);

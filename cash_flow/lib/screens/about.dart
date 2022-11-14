@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:test1/screens/main.dart';
 import 'package:test1/shared/menu_drawer.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -16,7 +17,10 @@ class AboutScreen extends StatelessWidget {
           Transform.scale(
               scale: 2.1,
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MainScreen()));
+                },
                 icon: Image.asset('assets/images/logo.png'),
               ))
         ],

@@ -11,6 +11,7 @@ class MenuBottom extends StatelessWidget {
   Widget build(BuildContext context) {
     int _selectedIndex = 0;
     return BottomNavigationBar(
+      backgroundColor: Color.fromARGB(255,183,228,199),
       fixedColor: Color.fromARGB(255, 45, 106, 79),
       onTap: (int index) {
         switch (index) {
