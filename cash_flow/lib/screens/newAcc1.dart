@@ -27,67 +27,26 @@ class _newAcc1State extends State<newAcc1> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
           backBtn(upperMargin: screenHeight * 0.05, widgetName: const Slash()),
-          const newAccHeader(
+          newAccHeader(
             color1: Color.fromARGB(255, 82, 183, 136),
             color2: Color.fromARGB(255, 175, 175, 175),
             color3: Color.fromARGB(255, 175, 175, 175),
-            color4: Color.fromARGB(255, 175, 175, 175),
           ),
           Container(
             width: screenWidth * 0.7,
-            height: screenHeight * 0.08,
-            margin: EdgeInsets.only(top: screenHeight * 0.07),
-            child: ElevatedButton.icon(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.only(
-                    // top: screenHeight * 0.058,
-                    right: screenWidth * 0.05,
-                    // bottom: screenHeight * 0.055,
-                    // left: screenWidth * 0.03
-                  ),
-                  backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                  shadowColor: const Color.fromARGB(255, 255, 255, 255),
-                  elevation: 6),
-              icon: Image.asset('assets/images/google_icon.png'),
-              label: Text(
-                'Sign up with Google',
-                style: TextStyle(
-                  fontSize: screenWidth * 0.045,
-                  color: const Color.fromARGB(255, 82, 183, 136),
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
+            margin: EdgeInsets.only(top: screenHeight * 0.06),
+            child: Image.asset('assets/images/logo.png'),
           ),
-          Container(
-              margin: EdgeInsets.only(top: screenHeight * 0.03),
-              child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0x00ffffff),
-                    shadowColor: const Color(0x00ffffff),
-                  ),
-                  child: Text('or another email',
-                      style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontSize: screenWidth * 0.042,
-                          color: const Color.fromARGB(255, 82, 183, 136))))),
           InputBar(
             text: 'Email',
-            upperMargin: screenHeight * 0.03,
-          ),
-          InputBar(
-            text: 'Phone number',
-            upperMargin: screenHeight * 0.015,
+            upperMargin: screenHeight * 0.016,
           ),
           InputBar(
             text: 'Username',
             upperMargin: screenHeight * 0.015,
           ),
           InputBar(
-            text: 'Country',
+            text: 'Password',
             upperMargin: screenHeight * 0.015,
           ),
           nextBtn(

@@ -28,30 +28,18 @@ class _newAcc2State extends State<newAcc2> {
                 children: [
           backBtn(
               upperMargin: screenHeight * 0.05, widgetName: const newAcc1()),
-          const newAccHeader(
+          newAccHeader(
             color1: Color.fromARGB(255, 82, 183, 136),
             color2: Color.fromARGB(255, 82, 183, 136),
             color3: Color.fromARGB(255, 175, 175, 175),
-            color4: Color.fromARGB(255, 175, 175, 175),
           ),
-          ProfilePic(),
           Container(
-              margin: EdgeInsets.only(top: screenHeight * 0.05),
-              child: Text(
-                'Help recognizing you',
-                style: TextStyle(
-                  fontSize: screenHeight * 0.026,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w700,
-                ),
-              )),
-          InputBar(
-            text: 'Full name',
-            upperMargin: screenHeight * 0.035,
+            margin: EdgeInsets.only(top: screenHeight * 0.09),
+            child: ProfilePic(),
           ),
           nextBtn(
               text: 'Next',
-              upperMargin: screenHeight * 0.025,
+              upperMargin: screenHeight * 0.05,
               widgetName: const newAcc3()),
         ])));
   }
@@ -82,22 +70,6 @@ class _newAcc2State extends State<newAcc2> {
                 icon: const Icon(Icons.camera),
                 label: Text(
                   'Camera',
-                  style: TextStyle(
-                      fontFamily: 'Montserrat', fontSize: screenHeight * 0.02),
-                ),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      const Color.fromARGB(255, 82, 183, 136)),
-                  padding: MaterialStateProperty.all(EdgeInsets.symmetric(
-                      vertical: screenHeight * 0.02,
-                      horizontal: screenWidth * 0.07)),
-                ),
-              ),
-              ElevatedButton.icon(
-                onPressed: () {},
-                icon: const Icon(Icons.image),
-                label: Text(
-                  'Gallery',
                   style: TextStyle(
                       fontFamily: 'Montserrat', fontSize: screenHeight * 0.02),
                 ),

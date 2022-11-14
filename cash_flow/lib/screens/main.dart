@@ -15,7 +15,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromARGB(255,226,253,230),
+      backgroundColor: Color.fromARGB(255, 226, 253, 230),
       appBar: AppBar(
         actions: [
           Transform.scale(
@@ -31,11 +31,7 @@ class MainScreen extends StatelessWidget {
         elevation: 15,
         shadowColor: Color.fromARGB(255, 99, 142, 53),
         title: Container(
-          child: Text(
-            'Pocketful',
-            style: TextStyle(
-                fontFamily: 'Montserrat', fontWeight: FontWeight.bold),
-          ),
+          child: Text('Pocketfull'),
         ),
       ),
       drawer: MenuDrawer(),
@@ -109,7 +105,6 @@ class MainScreen extends StatelessWidget {
                                     shape: BoxShape.circle),
                                 child: Icon(Icons.analytics_outlined,
                                     color: Colors.white),
-                                    
                               ),
                               Text(
                                 "Expenses Statistics",
