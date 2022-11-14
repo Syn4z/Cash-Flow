@@ -7,19 +7,22 @@ class InputBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.width;
     return Container(
-        width: 270,
-        height: 60,
+        width: screenWidth * 0.7,
+        height: screenHeight * 0.16,
         margin: EdgeInsets.only(top: upperMargin),
         child: TextField(
           decoration: InputDecoration(
-              contentPadding: EdgeInsets.only(left: 30, top: 50),
+              contentPadding:
+                  EdgeInsets.only(left: screenWidth * 0.06, top: 50),
               border: const OutlineInputBorder(),
               hintText: text,
-              hintStyle: const TextStyle(
+              hintStyle: TextStyle(
                 fontFamily: 'Inter',
-                fontSize: 16,
-                color: Color(0x4D000000),
+                fontSize: screenHeight * 0.042,
+                color: const Color(0x4D000000),
               )),
         ));
   }

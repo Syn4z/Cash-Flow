@@ -2,11 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:test1/screens/about.dart';
+import 'package:test1/screens/expenses.dart';
 import 'package:test1/screens/settings.dart';
 import 'package:test1/screens/user.dart';
 import '../screens/main.dart';
 import '../screens/debts.dart';
-import '../screens/expenses.dart';
+import '../screens/addExpense.dart';
 import '../screens/goals.dart';
 import '../screens/income.dart';
 
@@ -27,7 +28,7 @@ class MenuDrawer extends StatelessWidget {
       );
 
   Widget buildHeader(BuildContext context) => Material(
-        color: Color.fromARGB(255, 89, 122, 90),
+        color: Color.fromARGB(255, 45,106,79),
         child: InkWell(
           onTap: () {
             Navigator.pop(context);
@@ -69,31 +70,36 @@ class MenuDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(Icons.home,color: Colors.lightBlueAccent,),
-              title: Text('Home'),
+              title: Text('Home',
+              style: TextStyle(fontFamily: 'Montserrat'),),
               onTap: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => MainScreen())),
             ),
             ListTile(
               leading: Icon(Icons.attach_money,color: Colors.green,),
-              title: Text('Income'),
+              title: Text('Income',
+              style: TextStyle(fontFamily: 'Montserrat'),),
               onTap: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => IncomeScreen())),
             ),
             ListTile(
               leading: Icon(Icons.analytics_outlined,color: Colors.purpleAccent,),
-              title: Text('Expenses'),
+              title: Text('Expenses',
+              style: TextStyle(fontFamily: 'Montserrat'),),
               onTap: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => ExpensesScreen())),
             ),
             ListTile(
               leading: Icon(Icons.auto_graph,color: Colors.amber,),
-              title: Text('Goals'),
+              title: Text('Goals',
+              style: TextStyle(fontFamily: 'Montserrat'),),
               onTap: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => GoalsScreen())),
             ),
             ListTile(
               leading: Icon(Icons.auto_stories_outlined,color: Color.fromARGB(255, 183, 73, 65),),
-              title: Text('Debts'),
+              title: Text('Debts',
+              style: TextStyle(fontFamily: 'Montserrat'),),
               onTap: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => DebtsScreen())),
             ),
@@ -102,13 +108,15 @@ class MenuDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(Icons.app_settings_alt_outlined,color: Colors.black,),
-              title: Text('Settings'),
+              title: Text('Settings',
+              style: TextStyle(fontFamily: 'Montserrat'),),
               onTap: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => SettingsScreen())),
             ),
             ListTile(
               leading: Icon(Icons.info_outline),
-              title: Text('About'),
+              title: Text('About',
+              style: TextStyle(fontFamily: 'Montserrat'),),
               onTap: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => AboutScreen())),
             ),

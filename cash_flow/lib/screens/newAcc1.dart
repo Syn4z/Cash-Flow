@@ -1,6 +1,13 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
+import 'package:test1/screens/newAcc2.dart';
+import 'package:test1/screens/slash.dart';
+import 'package:test1/widgets/newAccountHeader.dart';
 
+import '../widgets/backButton.dart';
+import '../widgets/input.dart';
+import '../widgets/nextButton.dart';
+
+// ignore: camel_case_types
 class newAcc1 extends StatefulWidget {
   const newAcc1({super.key});
 
@@ -8,9 +15,85 @@ class newAcc1 extends StatefulWidget {
   State<newAcc1> createState() => _newAcc1State();
 }
 
+// ignore: camel_case_types
 class _newAcc1State extends State<newAcc1> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    return Scaffold(
+        body: Center(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+          backBtn(upperMargin: screenHeight * 0.05, widgetName: const Slash()),
+          const newAccHeader(
+            color1: Color.fromARGB(255, 82, 183, 136),
+            color2: Color.fromARGB(255, 175, 175, 175),
+            color3: Color.fromARGB(255, 175, 175, 175),
+            color4: Color.fromARGB(255, 175, 175, 175),
+          ),
+          Container(
+            width: screenWidth * 0.7,
+            height: screenHeight * 0.08,
+            margin: EdgeInsets.only(top: screenHeight * 0.07),
+            child: ElevatedButton.icon(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.only(
+                    // top: screenHeight * 0.058,
+                    right: screenWidth * 0.05,
+                    // bottom: screenHeight * 0.055,
+                    // left: screenWidth * 0.03
+                  ),
+                  backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                  shadowColor: const Color.fromARGB(255, 255, 255, 255),
+                  elevation: 6),
+              icon: Image.asset('assets/images/google_icon.png'),
+              label: Text(
+                'Sign up with Google',
+                style: TextStyle(
+                  fontSize: screenWidth * 0.045,
+                  color: const Color.fromARGB(255, 82, 183, 136),
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+          ),
+          Container(
+              margin: EdgeInsets.only(top: screenHeight * 0.03),
+              child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0x00ffffff),
+                    shadowColor: const Color(0x00ffffff),
+                  ),
+                  child: Text('or another email',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: screenWidth * 0.042,
+                          color: const Color.fromARGB(255, 82, 183, 136))))),
+          InputBar(
+            text: 'Email',
+            upperMargin: screenHeight * 0.03,
+          ),
+          InputBar(
+            text: 'Phone number',
+            upperMargin: screenHeight * 0.015,
+          ),
+          InputBar(
+            text: 'Username',
+            upperMargin: screenHeight * 0.015,
+          ),
+          InputBar(
+            text: 'Country',
+            upperMargin: screenHeight * 0.015,
+          ),
+          nextBtn(
+              text: 'Next',
+              upperMargin: screenHeight * 0.019,
+              widgetName: newAcc2()),
+        ])));
   }
 }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:test1/screens/main.dart';
+import 'package:test1/screens/slash.dart';
 
-import '../widgets/blueButton.dart';
+import '../widgets/backButton.dart';
+import '../widgets/nextButton.dart';
 import '../widgets/input.dart';
-import 'package:test1/screens/newAcc1.dart';
+import 'main.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -12,33 +14,36 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  double screenWidth = WidgetsBinding.instance.window.physicalSize.width;
-  double screenHeight = WidgetsBinding.instance.window.physicalSize.height;
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
         body: Center(
             child: Column(
+                // mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+          backBtn(upperMargin: screenHeight * 0.05, widgetName: Slash()),
           Container(
-            width: 270,
-            height: 63,
-            margin: const EdgeInsets.only(top: 200),
+            width: screenWidth * 0.7,
+            height: screenHeight * 0.08,
+            margin: EdgeInsets.only(top: screenHeight * 0.13),
             child: ElevatedButton.icon(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.only(
-                      top: 20.0, right: 40.0, bottom: 20.0, left: 18.0),
+                  padding: EdgeInsets.only(
+                    right: screenWidth * 0.05,
+                  ),
                   backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   shadowColor: const Color.fromARGB(255, 255, 255, 255),
                   elevation: 6),
               icon: Image.asset('assets/images/google_icon.png'),
-              label: const Text(
+              label: Text(
                 'Sign in with Google',
                 style: TextStyle(
-                  fontSize: 16,
-                  color: Color.fromARGB(255, 33, 149, 243),
+                  fontSize: screenWidth * 0.045,
+                  color: const Color.fromARGB(255, 82, 183, 136),
                   fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w400,
                 ),
@@ -46,27 +51,28 @@ class _LoginState extends State<Login> {
             ),
           ),
           Container(
-              margin: const EdgeInsets.only(top: 52),
+              margin: EdgeInsets.only(top: screenHeight * 0.07),
               child: ElevatedButton(
                   onPressed: () {},
-                  child: const Text('or another email',
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0x00ffffff),
+                    shadowColor: const Color(0x00ffffff),
+                  ),
+                  child: Text('or another email',
                       style: TextStyle(
                           fontFamily: 'Montserrat',
-                          fontSize: 16,
-                          color: Color.fromARGB(255, 33, 149, 243))),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0x00ffffff),
-                    shadowColor: Color(0x00ffffff),
-                  ))),
-          InputBar(
+                          fontSize: screenWidth * 0.042,
+                          color: const Color.fromARGB(255, 82, 183, 136))))),
+          const InputBar(
             text: 'Your email',
             upperMargin: 60,
           ),
-          InputBar(
+          const InputBar(
             text: 'Your password',
             upperMargin: 18,
           ),
-          blueBtn(text: 'Sign In', upperMargin: 42, widgetName: MainScreen()),
+          const nextBtn(
+              text: 'Sign In', upperMargin: 42, widgetName: MainScreen()),
         ])));
   }
 }
