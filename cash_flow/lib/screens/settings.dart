@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test1/screens/main.dart';
+import 'package:test1/screens/slash.dart';
 import 'package:test1/shared/menu_drawer.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -27,6 +28,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text("Settings UI",
@@ -80,7 +83,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
               child: Padding(
                 padding: const EdgeInsets.all(70.0),
                 child: OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: ((builder) => bottomMessage()));
+                  },
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -91,7 +98,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               fontWeight: FontWeight.w300,
                               color: Color.fromARGB(255, 45, 106, 79)),
                         ),
-                        SizedBox(width: 5,),
+                        SizedBox(
+                          width: 5,
+                        ),
                         Icon(Icons.arrow_forward,
                             color: Color.fromARGB(255, 45, 106, 79))
                       ]),
@@ -180,6 +189,60 @@ class _SettingsScreenState extends State<SettingsScreen> {
               color: Colors.grey,
             )
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget bottomMessage() {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+    return Container(
+        padding: EdgeInsets.only(top: screenHeight * 0.03),
+        width: screenWidth,
+        height: screenHeight * 0.18,
+        child: Column(
+          children: [
+            Container(
+              child: Text('Are you sure you want to sign out?',
+                  style: TextStyle(
+                    fontSize: screenHeight * 0.023,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w400,
+                  )),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                btn('Yes', Slash(), Color.fromARGB(255, 183, 183, 183)),
+                btn('Cancel', SettingsScreen(),
+                    Color.fromARGB(255, 82, 183, 136)),
+              ],
+            )
+          ],
+        ));
+  }
+
+  Widget btn(String text, Widget widgetName, Color color) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+    return Container(
+      margin: EdgeInsets.symmetric(
+          horizontal: screenWidth * 0.02, vertical: screenHeight * 0.025),
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => widgetName));
+        },
+        child: Text(
+          text,
+          style: TextStyle(
+              fontFamily: 'Montserrat', fontSize: screenHeight * 0.02),
+        ),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(color),
+          padding: MaterialStateProperty.all(EdgeInsets.symmetric(
+              vertical: screenHeight * 0.02, horizontal: screenWidth * 0.07)),
         ),
       ),
     );

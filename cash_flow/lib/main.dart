@@ -16,7 +16,7 @@ class Pocketful extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => Slash(),
+        '/': (context) => MainScreen(),
         '/add': (context) => AddExpenseScreen(),
       },
       initialRoute: '/',
