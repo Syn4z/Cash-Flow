@@ -6,13 +6,11 @@ class newAccHeader extends StatelessWidget {
   final Color color1;
   final Color color2;
   final Color color3;
-  final Color color4;
   const newAccHeader(
       {super.key,
       required this.color1,
       required this.color2,
-      required this.color3,
-      required this.color4});
+      required this.color3});
 
   Widget box(double w, double h, Color c) => Container(
         decoration: BoxDecoration(
@@ -48,10 +46,9 @@ class newAccHeader extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              box(screenWidth * 0.163, screenHeight * 0.0035, color1),
-              box(screenWidth * 0.163, screenHeight * 0.0035, color2),
-              box(screenWidth * 0.163, screenHeight * 0.0035, color3),
-              box(screenWidth * 0.163, screenHeight * 0.0035, color4),
+              box(screenWidth * 0.23, screenHeight * 0.0035, color1),
+              box(screenWidth * 0.23, screenHeight * 0.0035, color2),
+              box(screenWidth * 0.23, screenHeight * 0.0035, color3),
             ],
           ),
         ),
