@@ -85,7 +85,8 @@ class MainScreen extends StatelessWidget {
                         Container(
                           height: screenHeight * 0.6,
                           width: screenWidth * 0.87,
-                          // padding: EdgeInsets.all(16),
+                          padding: EdgeInsets.symmetric(
+                              vertical: screenHeight * 0.03),
                           decoration: BoxDecoration(
                               border: Border.all(
                                 color: Color.fromARGB(255, 45, 106, 79),

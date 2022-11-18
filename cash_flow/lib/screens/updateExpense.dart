@@ -59,7 +59,20 @@ class _ExpenseFormState extends State<ExpenseForm> {
   // Global key that uniquely identifies the Form widget
   // and allows validation of the form.
   final _formKey = GlobalKey<FormState>();
-
+  List<String> items = <String>[
+    'Food',
+    'Transportation',
+    'Home/Rent',
+    'Entertainment',
+    'Daily living',
+    'Financial obligation',
+    'Care',
+    'Gift',
+    'Personal',
+    'Salon',
+    'Other'
+  ];
+  List<String> types = <String>['Cash', 'Card'];
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -70,6 +83,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
           .push(MaterialPageRoute(builder: (context) => ExpensesScreen()));
     }
 
+    String dropDownValue = items[1];
     return Form(
       key: _formKey,
       child: Padding(
@@ -87,8 +101,19 @@ class _ExpenseFormState extends State<ExpenseForm> {
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
                     color: Color.fromARGB(255, 45, 106, 79))),
-            TextFormField(
+            DropdownButtonFormField(
               // The validator receives the text that the user has entered.
+              onChanged: (String? newValue) {
+                setState(() {
+                  dropDownValue = newValue!;
+                });
+              },
+              items: types.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return "Enter Type";
@@ -96,7 +121,6 @@ class _ExpenseFormState extends State<ExpenseForm> {
                 return null;
               },
               style: TextStyle(color: Color.fromARGB(255, 45, 106, 79)),
-              cursorColor: Color.fromARGB(255, 149, 213, 178),
               decoration: InputDecoration(
                   focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -109,7 +133,18 @@ class _ExpenseFormState extends State<ExpenseForm> {
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
                     color: Color.fromARGB(255, 45, 106, 79))),
-            TextFormField(
+            DropdownButtonFormField(
+              onChanged: (String? newValue) {
+                setState(() {
+                  dropDownValue = newValue!;
+                });
+              },
+              items: items.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
               // The validator receives the text that the user has entered.
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -118,7 +153,6 @@ class _ExpenseFormState extends State<ExpenseForm> {
                 return null;
               },
               style: TextStyle(color: Color.fromARGB(255, 45, 106, 79)),
-              cursorColor: Color.fromARGB(255, 45, 106, 79),
               decoration: InputDecoration(
                   focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
