@@ -72,6 +72,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
     'Salon',
     'Other'
   ];
+  List<String> types = <String>['Cash', 'Card'];
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -107,14 +108,12 @@ class _ExpenseFormState extends State<ExpenseForm> {
                   dropDownValue = newValue!;
                 });
               },
-              items: items.map<DropdownMenuItem<String>>((String value) {
+              items: types.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),
                 );
               }).toList(),
-              // The validator receives the text that the user has entered.
-              value: dropDownValue,
               validator: (value) {
                 if (value == null) {
                   return "Enter Type";
@@ -122,7 +121,6 @@ class _ExpenseFormState extends State<ExpenseForm> {
                 return null;
               },
               style: TextStyle(color: Color.fromARGB(255, 45, 106, 79)),
-              // cursorColor: Color.fromARGB(255, 149, 213, 178),
               decoration: InputDecoration(
                   focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -135,16 +133,26 @@ class _ExpenseFormState extends State<ExpenseForm> {
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
                     color: Color.fromARGB(255, 45, 106, 79))),
-            TextFormField(
+            DropdownButtonFormField(
+              onChanged: (String? newValue) {
+                setState(() {
+                  dropDownValue = newValue!;
+                });
+              },
+              items: items.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
               // The validator receives the text that the user has entered.
               validator: (value) {
-                if (value == null || value.isEmpty) {
+                if (value == null) {
                   return "Enter Category";
                 }
                 return null;
               },
               style: TextStyle(color: Color.fromARGB(255, 45, 106, 79)),
-              cursorColor: Color.fromARGB(255, 45, 106, 79),
               decoration: InputDecoration(
                   focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(

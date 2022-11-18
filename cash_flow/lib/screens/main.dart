@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:test1/screens/goals.dart';
 import 'package:test1/screens/income.dart';
 import 'package:test1/shared/side_actions.dart';
+import 'package:test1/widgets/pieChart.dart';
 import '../shared/menu_drawer.dart';
 import '../shared/menu_bottom.dart';
 
@@ -13,6 +14,8 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 226, 253, 230),
@@ -80,7 +83,9 @@ class MainScreen extends StatelessWidget {
                     Wrap(
                       children: <Widget>[
                         Container(
-                          padding: EdgeInsets.all(16),
+                          height: screenHeight * 0.6,
+                          width: screenWidth * 0.87,
+                          // padding: EdgeInsets.all(16),
                           decoration: BoxDecoration(
                               border: Border.all(
                                 color: Color.fromARGB(255, 45, 106, 79),
@@ -98,18 +103,12 @@ class MainScreen extends StatelessWidget {
                           child: Row(
                             children: <Widget>[
                               Container(
-                                height: 250,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 64, 145, 108),
-                                    shape: BoxShape.circle),
-                                child: Icon(Icons.analytics_outlined,
-                                    color: Colors.white),
+                                width: screenWidth * 0.8,
+                                // height: screenHeight * 0.5,
+                                // decoration:
+                                //     BoxDecoration(shape: BoxShape.circle),
+                                child: pieChart(),
                               ),
-                              Text(
-                                "Expenses Statistics",
-                                style: Theme.of(context).textTheme.titleLarge,
-                              )
                             ],
                           ),
                         )
