@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+
 import 'package:flutter/material.dart';
 
 class MenuBottom extends StatelessWidget {
@@ -11,8 +12,9 @@ class MenuBottom extends StatelessWidget {
   Widget build(BuildContext context) {
     int _selectedIndex = 0;
     return BottomNavigationBar(
+      selectedItemColor: Color.fromARGB(255, 27,67,50),
+      unselectedItemColor: Color.fromARGB(255, 27,67,50),
       backgroundColor: Color.fromARGB(255,183,228,199),
-      fixedColor: Color.fromARGB(255, 45, 106, 79),
       onTap: (int index) {
         switch (index) {
           case 0:
