@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:test1/screens/addExpense.dart';
+import 'package:test1/screens/goals.dart';
 import 'package:test1/screens/main.dart';
 import 'package:test1/screens/slash.dart';
 import 'package:test1/screens/login.dart';
+import 'package:test1/screens/user.dart';
 
 void main() {
   runApp(Pocketful());
@@ -17,7 +19,7 @@ class Pocketful extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => MainScreen(),
-        '/add': (context) => AddExpenseScreen(),
+        '/goals': (context) => GoalsScreen(),
       },
       initialRoute: '/',
       theme: ThemeData(
