@@ -19,6 +19,7 @@ class newAcc1 extends StatefulWidget {
 class _newAcc1State extends State<newAcc1> {
   final key = GlobalKey<FormState>();
   final key2 = GlobalKey<FormState>();
+  final key3 = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -46,6 +47,8 @@ class _newAcc1State extends State<newAcc1> {
             upperMargin: screenHeight * 0.002,
           ),
           InputBar(
+            username: true,
+            formKey: key3,
             text: 'Username',
             upperMargin: screenHeight * 0.007,
           ),
@@ -59,6 +62,7 @@ class _newAcc1State extends State<newAcc1> {
           nextBtn(
               formKey: key,
               formKey2: key2,
+              formKey3: key3,
               text: 'Next',
               upperMargin: screenHeight * 0.019,
               widgetName: const newAcc2()),

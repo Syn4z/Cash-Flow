@@ -39,7 +39,7 @@ class MainScreen extends StatelessWidget {
       drawer: MenuDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Color.fromARGB(255, 64,145,108),
+        backgroundColor: Color.fromARGB(255, 64, 145, 108),
         child: Icon(Icons.analytics_outlined),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -102,39 +102,39 @@ class MainScreen extends StatelessWidget {
                     SizedBox(height: 7),
                     Container(
                       height: 200,
-                      child:
-                          PageView(controller: _controller, scrollDirection: Axis.horizontal, children: [
-                        ExpensesSt(
-                          expInfo: "Bills",
-                          spendings: 3500,
-                          info1: "info1",
-                          info2: "info2",
-                          color: Color.fromARGB(255, 90, 182, 177),
-                        ),
-                        ExpensesSt(
-                          expInfo: "Personal expenses",
-                          spendings: 2000,
-                          info1: "info1",
-                          info2: "info2",
-                          color: Color.fromARGB(255, 164, 186, 118),
-                        ),
-                        ExpensesSt(
-                          expInfo: "Savings",
-                          spendings: 500,
-                          info1: "info1",
-                          info2: "info2",
-                          color: Color.fromARGB(255, 192, 132, 174),
-                        ),
-                      ]),
+                      child: PageView(
+                          controller: _controller,
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            ExpensesSt(
+                              expInfo: "Bills",
+                              spendings: 3500,
+                              info1: "info1",
+                              info2: "info2",
+                              color: Color.fromARGB(255, 90, 182, 177),
+                            ),
+                            ExpensesSt(
+                              expInfo: "Personal expenses",
+                              spendings: 2000,
+                              info1: "info1",
+                              info2: "info2",
+                              color: Color.fromARGB(255, 164, 186, 118),
+                            ),
+                            ExpensesSt(
+                              expInfo: "Savings",
+                              spendings: 500,
+                              info1: "info1",
+                              info2: "info2",
+                              color: Color.fromARGB(255, 192, 132, 174),
+                            ),
+                          ]),
                     ),
                     SizedBox(height: 25),
                     SmoothPageIndicator(
                       controller: _controller,
                       count: 3,
                       effect: ExpandingDotsEffect(
-                        activeDotColor: Color.fromARGB(255,149,213,178)
-                      ),
-                      
+                          activeDotColor: Color.fromARGB(255, 149, 213, 178)),
                     ),
                     SizedBox(height: 40),
                     Text(

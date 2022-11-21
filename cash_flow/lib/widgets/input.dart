@@ -6,6 +6,7 @@ class InputBar extends StatelessWidget {
   final bool? passwordLogin;
   final bool? passwordRegistration;
   final bool? email;
+  final bool? username;
   final String text;
   final double upperMargin;
   final GlobalKey<FormState>? formKey;
@@ -17,7 +18,8 @@ class InputBar extends StatelessWidget {
       this.passwordLogin,
       this.passwordRegistration,
       this.email,
-      this.formKey});
+      this.formKey,
+      this.username});
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +44,12 @@ class InputBar extends StatelessWidget {
                 } else if (email == true) {
                   if (value == null || !EmailValidator.validate(value)) {
                     return 'Enter a valid email';
+                  } else {
+                    return null;
+                  }
+                } else if (username == true) {
+                  if (value == null || value.length < 1) {
+                    return 'Enter username';
                   } else {
                     return null;
                   }

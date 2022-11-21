@@ -6,21 +6,44 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:pie_chart/pie_chart.dart';
 
 class pieChart extends StatelessWidget {
-  const pieChart({super.key});
+  final double Food;
+  final double Transportation;
+  final double HomeRent;
+  final double Entertainment;
+  final double DailyLiving;
+  final double FinancialObligation;
+  final double Care;
+  final double Gift;
+  final double Personal;
+  final double Salon;
+  final double Other;
+  const pieChart(
+      {super.key,
+      required this.Food,
+      required this.Transportation,
+      required this.HomeRent,
+      required this.Entertainment,
+      required this.DailyLiving,
+      required this.FinancialObligation,
+      required this.Care,
+      required this.Gift,
+      required this.Personal,
+      required this.Salon,
+      required this.Other});
   @override
   Widget build(BuildContext context) {
     Map<String, double> dataMap = {
-      'Food': 3004.7,
-      'Transportation': 120,
-      'Home/Rent': 1000,
-      'Entertainment': 2500,
-      'Daily living': 100,
-      'Financial obligation': 200,
-      'Care': 300,
-      'Gift': 500,
-      'Personal': 10,
-      'Salon': 500,
-      'Other': 100
+      'Food': Food,
+      'Transportation': Transportation,
+      'Home/Rent': HomeRent,
+      'Entertainment': Entertainment,
+      'Daily living': DailyLiving,
+      'Financial obligation': FinancialObligation,
+      'Care': Care,
+      'Gift': Gift,
+      'Personal': Personal,
+      'Salon': Salon,
+      'Other': Other
     };
     List<Color> colorList = [
       const Color(0xFFFF9F1C),

@@ -6,13 +6,15 @@ class nextBtn extends StatelessWidget {
   final Widget widgetName;
   final GlobalKey<FormState>? formKey;
   final GlobalKey<FormState>? formKey2;
+  final GlobalKey<FormState>? formKey3;
   const nextBtn(
       {super.key,
       required this.text,
       required this.upperMargin,
       required this.widgetName,
       this.formKey,
-      this.formKey2});
+      this.formKey2,
+      this.formKey3});
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +28,10 @@ class nextBtn extends StatelessWidget {
         onPressed: () {
           final isValidForm = formKey?.currentState?.validate();
           final isValidForm2 = formKey2?.currentState?.validate();
-          if (isValidForm2 == null) {
-            if (isValidForm == null || isValidForm == true) {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => widgetName));
-            } else {
-              return;
-            }
-          } else if (isValidForm == true && isValidForm2 == true) {
+          final isValidForm3 = formKey3?.currentState?.validate();
+          if ((isValidForm == true || isValidForm == null) &&
+              (isValidForm2 == true || isValidForm2 == null) &&
+              (isValidForm3 == true || isValidForm3 == null)) {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => widgetName));
           } else {
