@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:test1/screens/expenses.dart';
 import 'package:test1/screens/main.dart';
 
+import 'income.dart';
+
 class UpdateIncomeScreen extends StatelessWidget {
   const UpdateIncomeScreen({super.key});
 
@@ -28,7 +30,7 @@ class UpdateIncomeScreen extends StatelessWidget {
           elevation: 15,
           shadowColor: Color.fromARGB(255, 45, 106, 79),
           title: Text(
-            'Update Expense',
+            'Update Income',
             style: TextStyle(
                 fontFamily: 'Montserrat', fontWeight: FontWeight.bold),
           )),
@@ -60,16 +62,10 @@ class _IncomeFormState extends State<IncomeForm> {
   // and allows validation of the form.
   final _formKey = GlobalKey<FormState>();
   List<String> items = <String>[
-    'Food',
-    'Transportation',
-    'Home/Rent',
-    'Entertainment',
-    'Daily living',
-    'Financial obligation',
-    'Care',
-    'Gift',
-    'Personal',
-    'Salon',
+    'Salary',
+    'Dividents',
+    'Refunds',
+    'Awards',
     'Other'
   ];
   List<String> types = <String>['Cash', 'Card'];
@@ -78,9 +74,9 @@ class _IncomeFormState extends State<IncomeForm> {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
-    void _navigateToExpensesScreen(BuildContext context) {
+    void _navigateToIncomeScreen(BuildContext context) {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => ExpensesScreen()));
+          .push(MaterialPageRoute(builder: (context) => IncomeScreen()));
     }
 
     String dropDownValue = items[1];
@@ -237,7 +233,7 @@ class _IncomeFormState extends State<IncomeForm> {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.white),
                       onPressed: () {
-                        _navigateToExpensesScreen(context);
+                        _navigateToIncomeScreen(context);
                       },
                       child: const Text(
                         'Cancel',
@@ -259,7 +255,7 @@ class _IncomeFormState extends State<IncomeForm> {
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red.shade700),
                   onPressed: () {
-                    _navigateToExpensesScreen(context);
+                    _navigateToIncomeScreen(context);
                   },
                   child: const Text('Delete'),
                 ),
