@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:test1/screens/expenses.dart';
 import 'package:test1/screens/main.dart';
 
-class UpdateExpenseScreen extends StatelessWidget {
-  const UpdateExpenseScreen({super.key});
+class UpdateIncomeScreen extends StatelessWidget {
+  const UpdateIncomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,21 +41,21 @@ class UpdateExpenseScreen extends StatelessWidget {
               child: Container(),
             ),
           ),
-          ExpenseForm(),
+          IncomeForm(),
         ],
       ),
     );
   }
 }
 
-class ExpenseForm extends StatefulWidget {
-  const ExpenseForm({super.key});
+class IncomeForm extends StatefulWidget {
+  const IncomeForm({super.key});
 
   @override
-  State<ExpenseForm> createState() => _ExpenseFormState();
+  State<IncomeForm> createState() => _IncomeFormState();
 }
 
-class _ExpenseFormState extends State<ExpenseForm> {
+class _IncomeFormState extends State<IncomeForm> {
   // Global key that uniquely identifies the Form widget
   // and allows validation of the form.
   final _formKey = GlobalKey<FormState>();
@@ -220,7 +220,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
                           // If the form is valid, display a snackbar. In the real world,
                           // you'd often call a server or save the information in a database.
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Expense updated')),
+                            const SnackBar(content: Text('Income updated')),
                           );
                         }
                       },

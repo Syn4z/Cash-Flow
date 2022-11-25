@@ -6,13 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:test1/screens/expenses.dart';
 import 'package:test1/screens/main.dart';
 
-class UpdateExpenseScreen extends StatelessWidget {
-  const UpdateExpenseScreen({super.key});
+class AddIncomeScreen extends StatelessWidget {
+  const AddIncomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 149, 213, 178),
+      backgroundColor: Color.fromARGB(255, 183, 228, 199),
       appBar: AppBar(
           actions: [
             Transform.scale(
@@ -28,7 +28,7 @@ class UpdateExpenseScreen extends StatelessWidget {
           elevation: 15,
           shadowColor: Color.fromARGB(255, 45, 106, 79),
           title: Text(
-            'Update Expense',
+            'Add Income',
             style: TextStyle(
                 fontFamily: 'Montserrat', fontWeight: FontWeight.bold),
           )),
@@ -41,35 +41,29 @@ class UpdateExpenseScreen extends StatelessWidget {
               child: Container(),
             ),
           ),
-          ExpenseForm(),
+          IncomeForm(),
         ],
       ),
     );
   }
 }
 
-class ExpenseForm extends StatefulWidget {
-  const ExpenseForm({super.key});
+class IncomeForm extends StatefulWidget {
+  const IncomeForm({super.key});
 
   @override
-  State<ExpenseForm> createState() => _ExpenseFormState();
+  State<IncomeForm> createState() => _IncomeFormState();
 }
 
-class _ExpenseFormState extends State<ExpenseForm> {
+class _IncomeFormState extends State<IncomeForm> {
   // Global key that uniquely identifies the Form widget
   // and allows validation of the form.
   final _formKey = GlobalKey<FormState>();
   List<String> items = <String>[
-    'Food',
-    'Transportation',
-    'Home/Rent',
-    'Entertainment',
-    'Daily living',
-    'Financial obligation',
-    'Care',
-    'Gift',
-    'Personal',
-    'Salon',
+    'Salary',
+    'Dividents',
+    'Refunds',
+    'Awards',
     'Other'
   ];
   List<String> types = <String>['Cash', 'Card'];
@@ -84,6 +78,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
     }
 
     String dropDownValue = items[1];
+
     return Form(
       key: _formKey,
       child: Padding(
@@ -102,7 +97,6 @@ class _ExpenseFormState extends State<ExpenseForm> {
                     fontWeight: FontWeight.w700,
                     color: Color.fromARGB(255, 45, 106, 79))),
             DropdownButtonFormField(
-              // The validator receives the text that the user has entered.
               onChanged: (String? newValue) {
                 setState(() {
                   dropDownValue = newValue!;
@@ -115,7 +109,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
                 );
               }).toList(),
               validator: (value) {
-                if (value == null || value.isEmpty) {
+                if (value == null) {
                   return "Enter Type";
                 }
                 return null;
@@ -147,7 +141,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
               }).toList(),
               // The validator receives the text that the user has entered.
               validator: (value) {
-                if (value == null || value.isEmpty) {
+                if (value == null) {
                   return "Enter Category";
                 }
                 return null;
@@ -220,7 +214,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
                           // If the form is valid, display a snackbar. In the real world,
                           // you'd often call a server or save the information in a database.
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Expense updated')),
+                            const SnackBar(content: Text('Income added')),
                           );
                         }
                       },
@@ -239,32 +233,14 @@ class _ExpenseFormState extends State<ExpenseForm> {
                       onPressed: () {
                         _navigateToExpensesScreen(context);
                       },
-                      child: const Text(
-                        'Cancel',
-                        style:
-                            TextStyle(color: Color.fromARGB(255, 64, 145, 108)),
-                      ),
+                      child: const Text('Cancel',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 64, 145, 108))),
                     ),
                   ),
                 ),
               ],
-            ),
-            Padding(
-              padding:
-                  EdgeInsets.only(top: screenWidth / 10, left: screenWidth / 4),
-              child: SizedBox(
-                width: screenWidth * 0.4,
-                height: screenHeight * 0.05,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red.shade700),
-                  onPressed: () {
-                    _navigateToExpensesScreen(context);
-                  },
-                  child: const Text('Delete'),
-                ),
-              ),
-            ),
+            )
           ],
         ),
       ),
