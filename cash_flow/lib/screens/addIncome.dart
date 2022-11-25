@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:test1/screens/expenses.dart';
 import 'package:test1/screens/main.dart';
 
+import 'income.dart';
+
 class AddIncomeScreen extends StatelessWidget {
   const AddIncomeScreen({super.key});
 
@@ -72,9 +74,9 @@ class _IncomeFormState extends State<IncomeForm> {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
-    void _navigateToExpensesScreen(BuildContext context) {
+    void _navigateToIncomeScreen(BuildContext context) {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => ExpensesScreen()));
+          .push(MaterialPageRoute(builder: (context) => IncomeScreen()));
     }
 
     String dropDownValue = items[1];
@@ -231,7 +233,7 @@ class _IncomeFormState extends State<IncomeForm> {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.white),
                       onPressed: () {
-                        _navigateToExpensesScreen(context);
+                        _navigateToIncomeScreen(context);
                       },
                       child: const Text('Cancel',
                           style: TextStyle(
