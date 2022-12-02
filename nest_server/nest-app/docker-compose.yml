@@ -10,3 +10,19 @@ services:
       - POSTGRES_PASSWORD=postgres
 volumes:
   pgdata:
+
+api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    container_name: api
+    restart: "no"
+    tty: true
+    depends_on:
+      - postgres
+    ports:
+      - "4000:5432"
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgres://postgres:postgres@postgres/postgres  
