@@ -17,13 +17,14 @@ class AboutScreen extends StatelessWidget {
               scale: 2.1,
               child: IconButton(
                 onPressed: () {},
-                icon: Image.asset('assets/logo.png'),
+                icon: Image.asset('assets/images/logo.png'),
               ))
         ],
         elevation: 15,
-        shadowColor: Color.fromARGB(255, 99, 142, 53),
+        shadowColor: Color.fromARGB(255,64,145,108),
         title: Container(
-          child: Text('About'),
+          child: Text('About',
+          style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.bold ),),
         ),
       ),
       drawer: MenuDrawer(),

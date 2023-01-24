@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:test1/screens/main.dart';
+import 'package:test1/screens/slash.dart';
 
-import '../widgets/blueButton.dart';
+import '../widgets/backButton.dart';
+import '../widgets/nextButton.dart';
 import '../widgets/input.dart';
-import 'package:test1/screens/newAcc1.dart';
+
+import 'package:graphql_flutter/graphql_flutter.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -12,61 +15,60 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  double screenWidth = WidgetsBinding.instance.window.physicalSize.width;
-  double screenHeight = WidgetsBinding.instance.window.physicalSize.height;
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
         body: Center(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+          backBtn(upperMargin: screenHeight * 0.05, widgetName: const Slash()),
           Container(
-            width: 270,
-            height: 63,
-            margin: const EdgeInsets.only(top: 200),
-            child: ElevatedButton.icon(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.only(
-                      top: 20.0, right: 40.0, bottom: 20.0, left: 18.0),
-                  backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                  shadowColor: const Color.fromARGB(255, 255, 255, 255),
-                  elevation: 6),
-              icon: Image.asset('assets/images/google_icon.png'),
-              label: const Text(
-                'Sign in with Google',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color.fromARGB(255, 33, 149, 243),
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
+            margin: EdgeInsets.only(top: screenHeight * 0.09),
+            child: Image.asset('assets/images/logo.png'),
           ),
-          Container(
-              margin: const EdgeInsets.only(top: 52),
-              child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('or another email',
-                      style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontSize: 16,
-                          color: Color.fromARGB(255, 33, 149, 243))),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0x00ffffff),
-                    shadowColor: Color(0x00ffffff),
-                  ))),
           InputBar(
-            text: 'Your email',
-            upperMargin: 60,
+            text: 'Your email', //TO DO need to implement my graphql here
+            upperMargin: screenHeight * 0.02,
           ),
           InputBar(
             text: 'Your password',
-            upperMargin: 18,
+            upperMargin: screenHeight * 0.02,
           ),
-          blueBtn(text: 'Sign In', upperMargin: 42, widgetName: MainScreen()),
+          nextBtn(
+              text: 'Sign In',
+              upperMargin: screenHeight * 0.04,
+              widgetName: const MainScreen()),
         ])));
   }
 }
+/*
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    final HttpLink httpLink = 
+      HttpLink("http://localhost:3000/graphql");
+  
+    final ValueNotifier<GraphQLClient> client = ValueNotifier<GraphQLClient> {
+      GraphQLClient (
+        link: httpLink,
+        cache: OptimisticCache (
+          data
+        )
+      )
+    }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
+}
+*/

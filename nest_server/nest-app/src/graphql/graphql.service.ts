@@ -6,15 +6,24 @@ import { SignUpInput } from './dto/signup-input';
 import { UpdateGraphqlInput } from './dto/update-graphql.input';
 import * as argon from 'argon2';
 import { SignInInput } from './dto/signin-input';
+import { RemoveInput } from './dto/remove-input';
 
 @Injectable()
 export class GraphqlService {
   constructor(private prisma: PrismaService, private jwtService: JwtService, private configService: ConfigService) {}
   async signup(signUpInput: SignUpInput) {
     const hashedPassword = await argon.hash(signUpInput.password);
+    const sameUser = await this.prisma.user.findUnique({
+      where: {email: signUpInput.email},
+    });
+
+    if (sameUser) {
+      throw new ForbiddenException('User with this email already exists')
+    }
+    
     const user = await this.prisma.user.create({
       data: {username: signUpInput.username, 
-        hashedPassword, email: signUpInput.email}
+        hashedPassword, email: signUpInput.email} 
       })
     
     const { accesToken, refreshToken } = await this.createTokens(user.id, user.email);
@@ -43,16 +52,26 @@ export class GraphqlService {
     return { accesToken, refreshToken, user }
   }
 
+  // TO DO
   findOne(id: number) {
     return 'this.prisma.graphQL.findUnique({where: {id}})';
   }
 
+  // TO DO
   update(id: number, updateGraphqlInput: UpdateGraphqlInput) {
     return 'this.prisma.graphQL.update';
   }
 
-  remove(id: number) {
-    return 'this.prisma.graphQL.delete({where: {id}})';
+  async remove(removeInput: RemoveInput) {
+    const user = await this.prisma.user.delete({
+      where: {email: removeInput.email},  
+    });
+
+    if (!user) {
+      throw new ForbiddenException('No account with this email')
+    }
+
+    return { user };
   }
 
   async createTokens(userId: number, email: string) {
