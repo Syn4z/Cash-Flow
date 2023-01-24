@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'dart:io';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:test1/screens/addExpense.dart';
 import 'package:test1/screens/goals.dart';
 import 'package:test1/screens/income.dart';
-import 'package:test1/shared/side_actions.dart';
+import 'package:test1/util/expenses_statistics.dart';
 import '../shared/menu_drawer.dart';
 import '../shared/menu_bottom.dart';
 
@@ -13,6 +15,7 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _controller = PageController();
     var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 226, 253, 230),
@@ -31,10 +34,19 @@ class MainScreen extends StatelessWidget {
         elevation: 15,
         shadowColor: Color.fromARGB(255, 99, 142, 53),
         title: Container(
-          child: Text('Pocketfull'),
+          child: Text('P o c k e t f u l l'),
         ),
       ),
       drawer: MenuDrawer(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => AddExpenseScreen()));
+                  },
+        backgroundColor: Color.fromARGB(255, 64,145,108),
+        child: Icon(Icons.analytics_outlined),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: MenuBottom(),
       body: SingleChildScrollView(
         child: Stack(
@@ -53,7 +65,7 @@ class MainScreen extends StatelessWidget {
             ),
             SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 0),
                 child: Column(
                   children: <Widget>[
                     SizedBox(
@@ -70,52 +82,64 @@ class MainScreen extends StatelessWidget {
                     SizedBox(
                       width: size.width * .6,
                       child: Text(
-                        "Manage your expenses wisely and enjoy your spendings",
+                        '"Love your mom more than your money"',
                         style: TextStyle(
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.italic),
                       ),
                     ),
-                    SizedBox(height: size.height * .2),
-                    Wrap(
-                      children: <Widget>[
-                        Container(
-                          padding: EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Color.fromARGB(255, 45, 106, 79),
-                                width: 3,
-                              ),
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(25),
-                              boxShadow: [
-                                BoxShadow(
-                                    offset: Offset(0, 17),
-                                    blurRadius: 23,
-                                    spreadRadius: -13,
-                                    color: Color.fromARGB(255, 45, 106, 79))
-                              ]),
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                height: 250,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 64, 145, 108),
-                                    shape: BoxShape.circle),
-                                child: Icon(Icons.analytics_outlined,
-                                    color: Colors.white),
-                              ),
-                              Text(
-                                "Expenses Statistics",
-                                style: Theme.of(context).textTheme.titleLarge,
-                              )
-                            ],
-                          ),
-                        )
+                    SizedBox(height: size.height * .07),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Expenses ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 25),
+                        ),
+                        Text(
+                          " Statistics",
+                          style: TextStyle(fontSize: 25),
+                        ),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 7),
+                    Container(
+                      height: 200,
+                      child:
+                          PageView(controller: _controller, scrollDirection: Axis.horizontal, children: [
+                        ExpensesSt(
+                          expInfo: "Bills",
+                          spendings: 3500,
+                          info1: "info1",
+                          info2: "info2",
+                          color: Color.fromARGB(255, 90, 182, 177).withOpacity(0.75),
+                        ),
+                        ExpensesSt(
+                          expInfo: "Personal expenses",
+                          spendings: 2000,
+                          info1: "info1",
+                          info2: "info2",
+                          color: Color.fromARGB(255, 164, 186, 118).withOpacity(0.75),
+                        ),
+                        ExpensesSt(
+                          expInfo: "Savings",
+                          spendings: 500,
+                          info1: "info1",
+                          info2: "info2",
+                          color: Color.fromARGB(255, 192, 132, 174).withOpacity(0.75),
+                        ),
+                      ]),
+                    ),
+                    SizedBox(height: 25),
+                    SmoothPageIndicator(
+                      controller: _controller,
+                      count: 3,
+                      effect: ExpandingDotsEffect(
+                          activeDotColor: Color.fromARGB(255, 149, 213, 178)),
+                    ),
+                    SizedBox(height: 40),
                     Text(
                       "Month Goal",
                       style: Theme.of(context)
@@ -124,7 +148,8 @@ class MainScreen extends StatelessWidget {
                           ?.copyWith(fontWeight: FontWeight.bold),
                     ),
                     Container(
-                        margin: EdgeInsets.symmetric(vertical: 20),
+                        margin:
+                            EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                         padding: EdgeInsets.all(10),
                         height: 90,
                         decoration: BoxDecoration(
@@ -202,7 +227,7 @@ class InfoCard extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 64, 145, 108),
         radius: 25,
       ),
-      this.subInfoText = "15400 mdls",
+      this.subInfoText = "15400 MDL",
       this.subInfoTitle = "Current Month Income",
       Key? key})
       : super(key: key);
@@ -210,6 +235,7 @@ class InfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 20),
       padding: EdgeInsets.all(25.0),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25.0),

@@ -28,7 +28,7 @@ class MenuDrawer extends StatelessWidget {
       );
 
   Widget buildHeader(BuildContext context) => Material(
-        color: Color.fromARGB(255, 45,106,79),
+        color: Color.fromARGB(255, 64,145,108),
         child: InkWell(
           onTap: () {
             Navigator.pop(context);
@@ -44,7 +44,7 @@ class MenuDrawer extends StatelessWidget {
             child: Column(children: [
               CircleAvatar(
                 radius: 52,
-                backgroundColor: Colors.grey,
+                backgroundImage: NetworkImage('https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60'),
               ),
               SizedBox(height: 12),
               Text(
@@ -61,6 +61,7 @@ class MenuDrawer extends StatelessWidget {
       );
 
   Widget buildMenuItems(BuildContext context) => Container(
+        color: Color.fromARGB(255, 228,255,232),
         padding: EdgeInsets.all(24),
         child: Wrap(
           runSpacing: 16,

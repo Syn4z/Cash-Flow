@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:test1/screens/GraphQLConfig.dart';
 import 'package:test1/screens/addExpense.dart';
+import 'package:test1/screens/goals.dart';
 import 'package:test1/screens/main.dart';
 import 'package:test1/screens/slash.dart';
 import 'package:test1/screens/login.dart';
+<<<<<<< HEAD
 import "package:graphql_flutter/graphql_flutter.dart";
 import 'package:http/http.dart' as http;
+=======
+import 'package:test1/screens/user.dart';
+>>>>>>> origin/feature
 
 void main() async {
   await initHiveForFlutter();
@@ -34,8 +39,8 @@ class Pocketful extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => Slash(),
-        '/add': (context) => AddExpenseScreen(),
+        '/': (context) => MainScreen(),
+        '/goals': (context) => GoalsScreen(),
       },
       initialRoute: '/',
       theme: ThemeData(

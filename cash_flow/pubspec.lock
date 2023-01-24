@@ -99,6 +99,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+<<<<<<< HEAD
   dbus:
     dependency: transitive
     description:
@@ -106,6 +107,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.7.8"
+=======
+  email_validator:
+    dependency: "direct dev"
+    description:
+      name: email_validator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.17"
+>>>>>>> origin/feature
   fake_async:
     dependency: transitive
     description:
@@ -296,6 +306,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.2"
+<<<<<<< HEAD
   path_provider:
     dependency: transitive
     description:
@@ -380,11 +391,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.27.7"
+=======
+  pie_chart:
+    dependency: "direct main"
+    description:
+      name: pie_chart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.3.2"
+>>>>>>> origin/feature
   sky_engine:
     dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.99"
+  smooth_page_indicator:
+    dependency: "direct main"
+    description:
+      name: smooth_page_indicator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0+2"
   source_span:
     dependency: transitive
     description:

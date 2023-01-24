@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:test1/screens/expenses.dart';
 import 'package:test1/screens/main.dart';
 
-class AddExpenseScreen extends StatelessWidget {
-  const AddExpenseScreen({super.key});
+import 'income.dart';
+
+class AddIncomeScreen extends StatelessWidget {
+  const AddIncomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class AddExpenseScreen extends StatelessWidget {
           elevation: 15,
           shadowColor: Color.fromARGB(255, 45, 106, 79),
           title: Text(
-            'Add Expense',
+            'Add Income',
             style: TextStyle(
                 fontFamily: 'Montserrat', fontWeight: FontWeight.bold),
           )),
@@ -41,35 +43,29 @@ class AddExpenseScreen extends StatelessWidget {
               child: Container(),
             ),
           ),
-          ExpenseForm(),
+          IncomeForm(),
         ],
       ),
     );
   }
 }
 
-class ExpenseForm extends StatefulWidget {
-  const ExpenseForm({super.key});
+class IncomeForm extends StatefulWidget {
+  const IncomeForm({super.key});
 
   @override
-  State<ExpenseForm> createState() => _ExpenseFormState();
+  State<IncomeForm> createState() => _IncomeFormState();
 }
 
-class _ExpenseFormState extends State<ExpenseForm> {
+class _IncomeFormState extends State<IncomeForm> {
   // Global key that uniquely identifies the Form widget
   // and allows validation of the form.
   final _formKey = GlobalKey<FormState>();
   List<String> items = <String>[
-    'Food',
-    'Transportation',
-    'Home/Rent',
-    'Entertainment',
-    'Daily living',
-    'Financial obligation',
-    'Care',
-    'Gift',
-    'Personal',
-    'Salon',
+    'Salary',
+    'Dividents',
+    'Refunds',
+    'Awards',
     'Other'
   ];
   List<String> types = <String>['Cash', 'Card'];
@@ -78,9 +74,9 @@ class _ExpenseFormState extends State<ExpenseForm> {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
-    void _navigateToExpensesScreen(BuildContext context) {
+    void _navigateToIncomeScreen(BuildContext context) {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => ExpensesScreen()));
+          .push(MaterialPageRoute(builder: (context) => IncomeScreen()));
     }
 
     String dropDownValue = items[1];
@@ -220,7 +216,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
                           // If the form is valid, display a snackbar. In the real world,
                           // you'd often call a server or save the information in a database.
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Expense added')),
+                            const SnackBar(content: Text('Income added')),
                           );
                         }
                       },
@@ -237,7 +233,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.white),
                       onPressed: () {
-                        _navigateToExpensesScreen(context);
+                        _navigateToIncomeScreen(context);
                       },
                       child: const Text('Cancel',
                           style: TextStyle(

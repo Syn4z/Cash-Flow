@@ -31,7 +31,7 @@ class _newAcc3State extends State<newAcc3> {
                 children: [
           backBtn(
               upperMargin: screenHeight * 0.05, widgetName: const newAcc2()),
-          newAccHeader(
+          const newAccHeader(
             color1: Color.fromARGB(255, 82, 183, 136),
             color2: Color.fromARGB(255, 82, 183, 136),
             color3: Color.fromARGB(255, 82, 183, 136),
@@ -72,6 +72,7 @@ class _newAcc3State extends State<newAcc3> {
             ),
           ),
           nextBtn(
+              formKey: GlobalKey<FormState>(),
               text: 'Sign In',
               upperMargin: screenHeight * 0.07,
               widgetName: const MainScreen()),
