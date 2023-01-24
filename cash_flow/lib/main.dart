@@ -17,13 +17,31 @@ class Pocketful extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ValueNotifier<GraphQLClient> client = GraphQLConfig.graphInit();
+    final HttpLink link = HttpLink("http://20.123.41.200:5432/");
+
+    ValueNotifier<GraphQLClient> client =
+        ValueNotifier(GraphQLClient(cache: InMemoryCache(), link: link));
+
     return GraphQLProvider(
-      client: client,
-      child: MaterialApp(
-        title: 'Pocketful WORKING!',
-        home: MainScreen(),
-      ),
+        client: client,
+        child: MaterialApp(
+          home: MainScreen(),
+        ));
+  }
+  /*
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      routes: {
+        '/': (context) => Slash(),
+        '/add': (context) => AddExpenseScreen(),
+      },
+      initialRoute: '/',
+      theme: ThemeData(
+          appBarTheme: AppBarTheme(color: Color.fromARGB(255, 64, 145, 108)),
+          fontFamily: 'Montserrat'),
     );
   }
+  */
 }
