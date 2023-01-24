@@ -2,20 +2,14 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Graphql {
-  id: Int!
-  name: String!
-}
-
 type Mutation {
   remove(RemoveInput: RemoveInput!): RemoveResponse!
   signin(SignInInput: SignInInput!): SignResponse!
   signup(SignUpInput: SignUpInput!): SignResponse!
-  updateGraphql(updateGraphqlInput: UpdateGraphqlInput!): Graphql!
 }
 
 type Query {
-  graphql(id: Int!): Graphql!
+  findOne(FindUnique: SignInInput!): SignResponse!
 }
 
 input RemoveInput {
@@ -43,13 +37,6 @@ input SignUpInput {
   email: String!
   password: String!
   username: String!
-}
-
-input UpdateGraphqlInput {
-  email: String
-  id: Int!
-  password: String
-  username: String
 }
 
 type User {

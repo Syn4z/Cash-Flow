@@ -3,10 +3,10 @@ import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { SignUpInput } from './dto/signup-input';
-import { UpdateGraphqlInput } from './dto/update-graphql.input';
 import * as argon from 'argon2';
 import { SignInInput } from './dto/signin-input';
 import { RemoveInput } from './dto/remove-input';
+import { find } from 'rxjs';
 
 @Injectable()
 export class GraphqlService {
@@ -52,14 +52,16 @@ export class GraphqlService {
     return { accesToken, refreshToken, user }
   }
 
-  // TO DO
-  findOne(id: number) {
-    return 'this.prisma.graphQL.findUnique({where: {id}})';
-  }
+  async findone(findUnique: SignInInput) {
+    const user = await this.prisma.user.findUnique({
+      where: {email: findUnique.email},  
+    });
 
-  // TO DO
-  update(id: number, updateGraphqlInput: UpdateGraphqlInput) {
-    return 'this.prisma.graphQL.update';
+    if (!user) {
+      throw new ForbiddenException('No account with this email')
+    }
+
+    return { user };
   }
 
   async remove(removeInput: RemoveInput) {

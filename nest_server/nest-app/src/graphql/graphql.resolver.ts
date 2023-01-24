@@ -2,8 +2,6 @@ import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { GraphqlService } from './graphql.service';
 import { Graphql } from './entities/graphql.entity';
 import { SignUpInput } from './dto/signup-input';
-import { UpdateGraphqlInput } from './dto/update-graphql.input';
-import { sign } from 'crypto';
 import { SignResponse } from './dto/sign-response';
 import { SignInInput } from './dto/signin-input';
 import { RemoveResponse } from './dto/remove-response';
@@ -23,17 +21,9 @@ export class GraphqlResolver {
     return this.graphqlService.signin(signInInput);
   }
 
-  // TO DO
-  @Query(() => Graphql, { name: 'graphql' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
-    return this.graphqlService.findOne(id);
-  }
-  
-
-  // TO DO
-  @Mutation(() => Graphql)
-  updateGraphql(@Args('updateGraphqlInput') updateGraphqlInput: UpdateGraphqlInput) {
-    return this.graphqlService.update(updateGraphqlInput.id, updateGraphqlInput);
+  @Query(() => SignResponse)
+  findone(@Args('FindUnique') findUnique: SignInInput) {
+    return this.graphqlService.findone(findUnique);
   }
 
   @Mutation(() => RemoveResponse)

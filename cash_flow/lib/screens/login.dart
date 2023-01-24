@@ -6,7 +6,7 @@ import '../widgets/backButton.dart';
 import '../widgets/nextButton.dart';
 import '../widgets/input.dart';
 
-import 'package:graphql_flutter/graphql_flutter.dart';
+//import 'package:graphql_flutter/graphql_flutter.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -31,15 +31,10 @@ class _LoginState extends State<Login> {
             child: Image.asset('assets/images/logo.png'),
           ),
           InputBar(
-<<<<<<< HEAD
-            text: 'Your email', //TO DO need to implement my graphql here
-            upperMargin: screenHeight * 0.02,
-=======
             formKey: key,
             email: true,
             text: 'Your email',
             upperMargin: screenHeight * 0.005,
->>>>>>> origin/feature
           ),
           InputBar(
             formKey: key2,

@@ -40,10 +40,10 @@ class MainScreen extends StatelessWidget {
       drawer: MenuDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AddExpenseScreen()));
-                  },
-        backgroundColor: Color.fromARGB(255, 64,145,108),
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => AddExpenseScreen()));
+        },
+        backgroundColor: Color.fromARGB(255, 64, 145, 108),
         child: Icon(Icons.analytics_outlined),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -82,7 +82,7 @@ class MainScreen extends StatelessWidget {
                     SizedBox(
                       width: size.width * .6,
                       child: Text(
-                        '"Love your mom more than your money"',
+                        '"Learning to manage your money is the key to success"',
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -107,30 +107,35 @@ class MainScreen extends StatelessWidget {
                     SizedBox(height: 7),
                     Container(
                       height: 200,
-                      child:
-                          PageView(controller: _controller, scrollDirection: Axis.horizontal, children: [
-                        ExpensesSt(
-                          expInfo: "Bills",
-                          spendings: 3500,
-                          info1: "info1",
-                          info2: "info2",
-                          color: Color.fromARGB(255, 90, 182, 177).withOpacity(0.75),
-                        ),
-                        ExpensesSt(
-                          expInfo: "Personal expenses",
-                          spendings: 2000,
-                          info1: "info1",
-                          info2: "info2",
-                          color: Color.fromARGB(255, 164, 186, 118).withOpacity(0.75),
-                        ),
-                        ExpensesSt(
-                          expInfo: "Savings",
-                          spendings: 500,
-                          info1: "info1",
-                          info2: "info2",
-                          color: Color.fromARGB(255, 192, 132, 174).withOpacity(0.75),
-                        ),
-                      ]),
+                      child: PageView(
+                          controller: _controller,
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            ExpensesSt(
+                              expInfo: "Bills",
+                              spendings: 3500,
+                              info1: "info1",
+                              info2: "info2",
+                              color: Color.fromARGB(255, 90, 182, 177)
+                                  .withOpacity(0.75),
+                            ),
+                            ExpensesSt(
+                              expInfo: "Personal expenses",
+                              spendings: 2000,
+                              info1: "info1",
+                              info2: "info2",
+                              color: Color.fromARGB(255, 164, 186, 118)
+                                  .withOpacity(0.75),
+                            ),
+                            ExpensesSt(
+                              expInfo: "Savings",
+                              spendings: 500,
+                              info1: "info1",
+                              info2: "info2",
+                              color: Color.fromARGB(255, 192, 132, 174)
+                                  .withOpacity(0.75),
+                            ),
+                          ]),
                     ),
                     SizedBox(height: 25),
                     SmoothPageIndicator(
