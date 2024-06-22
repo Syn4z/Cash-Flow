@@ -2,8 +2,6 @@
 
 ![money](./cash_flow/screenshots/background.jpg)
 
-# Project Title
-
 A tool that let's you track your expenses, income, transfers and much more. It is an application for everything you can do with your money. This project includes a NestJS server for backend operations, a Flutter application for cross-platform mobile development, and uses Prisma for database access.
 
 ## Technologies Used
